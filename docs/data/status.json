@@ -1,7 +1,7 @@
 {
-  "last_check": "2026-04-20T14:09:09Z",
+  "last_check": "2026-04-20T14:19:46Z",
   "api_base": "api.yi.ax",
-  "model": "glm-5.1",
+  "model": "glm5.1",
   "http_status": 403,
   "latency_ms": null,
   "success": false,
