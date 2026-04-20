@@ -1,0 +1,45 @@
+name: API Status Check
+
+on:
+  schedule:
+    # 每10分钟运行一次
+    - cron: '0/10 * * * *'
+  workflow_dispatch:  # 手动触发
+  push:
+    paths:
+      - 'scripts/check_api.py'
+      - '.github/workflows/status-check.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run status check
+        env:
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
+          API_KEY: ${{ secrets.API_KEY }}
+          API_MODEL: ${{ secrets.API_MODEL }}
+        run: |
+          python scripts/check_api.py
+
+      - name: Commit results
+        run: |
+          git config user.name "Status Bot"
+          git config user.email "bot@example.com"
+          git add docs/data/
+          git diff --staged --quiet && echo "No changes" || git commit -m "Update status [skip ci]"
+          git push
