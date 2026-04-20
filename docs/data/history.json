@@ -52,5 +52,14 @@
     "token_output": false,
     "error_message": "HTTP 403: Forbidden",
     "model": "glm5.1"
+  },
+  {
+    "timestamp": "2026-04-20T14:54:04Z",
+    "success": true,
+    "http_status": 200,
+    "latency_ms": 2077,
+    "token_output": true,
+    "error_message": null,
+    "model": "glm-5.1"
   }
 ]

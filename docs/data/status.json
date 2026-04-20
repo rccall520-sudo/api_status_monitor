@@ -1,10 +1,10 @@
 {
-  "last_check": "2026-04-20T14:48:31Z",
-  "api_base": "api.yi.ax",
-  "model": "glm5.1",
-  "http_status": 403,
-  "latency_ms": null,
-  "success": false,
-  "token_output": false,
-  "error_message": "HTTP 403: Forbidden"
+  "last_check": "2026-04-20T14:54:04Z",
+  "api_base": "new-api.abrdns.com",
+  "model": "glm-5.1",
+  "http_status": 200,
+  "latency_ms": 2077,
+  "success": true,
+  "token_output": true,
+  "error_message": null
 }
