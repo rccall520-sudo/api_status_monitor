@@ -1,9 +1,9 @@
 {
-  "last_check": "2026-04-20T15:04:31Z",
+  "last_check": "2026-04-20T15:54:15Z",
   "api_base": "new-api.abrdns.com",
   "model": "glm-5.1",
   "http_status": 200,
-  "latency_ms": 4357,
+  "latency_ms": 4292,
   "success": true,
   "token_output": true,
   "error_message": null
