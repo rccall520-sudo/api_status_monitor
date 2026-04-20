@@ -1,0 +1,10 @@
+{
+  "last_check": "2026-04-20T12:44:27Z",
+  "api_base": "elysiver.h-e.top",
+  "model": "gpt-5.4",
+  "http_status": 403,
+  "latency_ms": null,
+  "success": false,
+  "token_output": false,
+  "error_message": "HTTP 403: Forbidden"
+}
