@@ -124,5 +124,14 @@
     "token_output": false,
     "error_message": "Failed to retrieve proxy group",
     "model": "glm-5.1"
+  },
+  {
+    "timestamp": "2026-04-20T22:11:10Z",
+    "success": false,
+    "http_status": 500,
+    "latency_ms": null,
+    "token_output": false,
+    "error_message": "Failed to retrieve proxy group",
+    "model": "glm-5.1"
   }
 ]
