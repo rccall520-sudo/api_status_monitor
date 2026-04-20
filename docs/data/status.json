@@ -1,10 +1,10 @@
 {
-  "last_check": "2026-04-20T15:54:15Z",
+  "last_check": "2026-04-20T17:10:48Z",
   "api_base": "new-api.abrdns.com",
   "model": "glm-5.1",
-  "http_status": 200,
-  "latency_ms": 4292,
-  "success": true,
-  "token_output": true,
-  "error_message": null
+  "http_status": 500,
+  "latency_ms": null,
+  "success": false,
+  "token_output": false,
+  "error_message": "Failed to retrieve proxy group"
 }
