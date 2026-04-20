@@ -41,5 +41,5 @@ jobs:
           git config user.name "Status Bot"
           git config user.email "bot@example.com"
           git add docs/data/
-          git diff --staged --quiet && echo "No changes" || git commit -m "Update status [skip ci]"
+          git diff --staged --quiet && echo "No changes" || git commit -m "Update status"
           git push
