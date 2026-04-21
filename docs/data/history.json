@@ -286,5 +286,14 @@
     "token_output": false,
     "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 202604212251449322198222HmNer9g)",
     "model": "glm-5.1"
+  },
+  {
+    "timestamp": "2026-04-21T23:40:05Z",
+    "success": false,
+    "http_status": 503,
+    "latency_ms": null,
+    "token_output": false,
+    "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 20260421234005663152619Nl9ylY2n)",
+    "model": "glm-5.1"
   }
 ]
