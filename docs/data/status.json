@@ -1,10 +1,10 @@
 {
-  "last_check": "2026-04-21T17:46:07Z",
+  "last_check": "2026-04-21T18:50:36Z",
   "api_base": "new-api.abrdns.com",
   "model": "glm-5.1",
   "http_status": 503,
   "latency_ms": null,
   "success": false,
   "token_output": false,
-  "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 20260421174607786193633X32ZxI37)"
+  "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 20260421185036790482051wB2JHN3o)"
 }
