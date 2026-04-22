@@ -1,10 +1,10 @@
 {
-  "last_check": "2026-04-22T17:46:45Z",
+  "last_check": "2026-04-22T18:06:14Z",
   "api_base": "jiuuij.de5.net",
   "model": "GLM-5.1",
   "http_status": 200,
-  "latency_ms": 3546,
+  "latency_ms": 5562,
   "success": true,
-  "token_output": false,
+  "token_output": true,
   "error_message": null
 }
