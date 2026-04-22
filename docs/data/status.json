@@ -1,10 +1,1 @@
-{
-  "last_check": "2026-04-22T01:06:26Z",
-  "api_base": "new-api.abrdns.com",
-  "model": "glm-5.1",
-  "http_status": 503,
-  "latency_ms": null,
-  "success": false,
-  "token_output": false,
-  "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 20260422010626609824081pAbaYOqc)"
-}
+{  "last_check": "2026-04-22T01:06:26Z",  "api_base": "jiuuij.de5.net",  "model": "glm-5.1",  "http_status": 503,  "latency_ms": null,  "success": false,  "token_output": false,  "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 20260422010626609824081pAbaYOqc)"}
