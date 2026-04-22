@@ -126,11 +126,7 @@ def probe_api(base_url: str, api_key: str, model: str) -> Dict[str, Any]:
                 content = message.get("content", "") if isinstance(message, dict) else ""
 
                 result["success"] = True
-                result["error_message"] = None
-                if content:
-                    result["token_output"] = True
-                else:
-                    result["error_message"] = "Empty response content"
+                result["token_output"] = bool(content)
             else:
                 result["error_message"] = f"HTTP {response.status}"
 
