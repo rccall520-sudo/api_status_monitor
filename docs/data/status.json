@@ -1,10 +1,10 @@
 {
-  "last_check": "2026-04-22T04:17:13Z",
-  "api_base": "new-api.abrdns.com",
-  "model": "glm-5.1",
-  "http_status": 503,
-  "latency_ms": null,
+  "last_check": "2026-04-22T04:35:10Z",
+  "api_base": "jiuuij.de5.net",
+  "model": "GLM-5.1",
+  "http_status": 200,
+  "latency_ms": 1972,
   "success": false,
   "token_output": false,
-  "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 20260422041714334197097in7QeOYW)"
+  "error_message": "Empty response content"
 }
