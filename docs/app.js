@@ -57,13 +57,12 @@ function updateStats(history) {
 
 // 按北京时间取整点 key，如 "2026-04-23T14"
 function bjHourKey(date) {
-    const parts = new Intl.DateTimeFormat('en-CA', {
-        timeZone: 'Asia/Shanghai',
-        year: 'numeric', month: '2-digit', day: '2-digit',
-        hour: '2-digit', hour12: false
-    }).formatToParts(date);
-    const get = type => parts.find(p => p.type === type)?.value || '';
-    return `${get('year')}-${get('month')}-${get('day')}T${get('hour')}`;
+    const bj = new Date(date.getTime() + 8 * 3600000);
+    const y = bj.getUTCFullYear();
+    const m = String(bj.getUTCMonth() + 1).padStart(2, '0');
+    const d = String(bj.getUTCDate()).padStart(2, '0');
+    const h = String(bj.getUTCHours()).padStart(2, '0');
+    return `${y}-${m}-${d}T${h}`;
 }
 
 function updateGrid(history) {
