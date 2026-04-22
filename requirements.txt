@@ -1,1 +1,2 @@
-# 无需额外依赖，使用Python标准库
+# 核心脚本 (scripts/check_api.py) 仅使用标准库，无需额外依赖
+# 本地守护进程 (monitor_daemon.py) 同样仅使用标准库
