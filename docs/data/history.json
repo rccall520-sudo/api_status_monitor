@@ -1,5 +1,135 @@
 [
   {
+    "last_check": "2026-04-22T14:04:54Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 200,
+    "latency_ms": 12653,
+    "success": true,
+    "token_output": true,
+    "error_message": ""
+  },
+  {
+    "last_check": "2026-04-22T13:54:41Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 0,
+    "latency_ms": null,
+    "success": false,
+    "token_output": false,
+    "error_message": "'NoneType' object is not subscriptable"
+  },
+  {
+    "last_check": "2026-04-22T13:44:30Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 0,
+    "latency_ms": null,
+    "success": false,
+    "token_output": false,
+    "error_message": "'NoneType' object is not subscriptable"
+  },
+  {
+    "last_check": "2026-04-22T13:34:25Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 0,
+    "latency_ms": null,
+    "success": false,
+    "token_output": false,
+    "error_message": "'NoneType' object is not subscriptable"
+  },
+  {
+    "last_check": "2026-04-22T13:24:22Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 0,
+    "latency_ms": null,
+    "success": false,
+    "token_output": false,
+    "error_message": "'NoneType' object is not subscriptable"
+  },
+  {
+    "last_check": "2026-04-22T13:14:18Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 200,
+    "latency_ms": 5006,
+    "success": true,
+    "token_output": true,
+    "error_message": ""
+  },
+  {
+    "last_check": "2026-04-22T13:04:13Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 200,
+    "latency_ms": 12456,
+    "success": true,
+    "token_output": true,
+    "error_message": ""
+  },
+  {
+    "last_check": "2026-04-22T12:54:01Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 200,
+    "latency_ms": 7837,
+    "success": true,
+    "token_output": true,
+    "error_message": ""
+  },
+  {
+    "last_check": "2026-04-22T12:43:53Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 200,
+    "latency_ms": 7676,
+    "success": true,
+    "token_output": true,
+    "error_message": ""
+  },
+  {
+    "last_check": "2026-04-22T12:33:45Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 0,
+    "latency_ms": null,
+    "success": false,
+    "token_output": false,
+    "error_message": "'NoneType' object is not subscriptable"
+  },
+  {
+    "last_check": "2026-04-22T12:23:42Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 503,
+    "latency_ms": 861,
+    "success": false,
+    "token_output": false,
+    "error_message": "{\"error\":{\"message\":\"No active API keys available for this group\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}}"
+  },
+  {
+    "last_check": "2026-04-22T12:13:41Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 200,
+    "latency_ms": 2628,
+    "success": true,
+    "token_output": true,
+    "error_message": ""
+  },
+  {
+    "last_check": "2026-04-22T12:12:54Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 200,
+    "latency_ms": 8154,
+    "success": true,
+    "token_output": true,
+    "error_message": ""
+  },
+  {
     "timestamp": "2026-04-20T12:44:27Z",
     "success": false,
     "http_status": 403,
@@ -216,109 +346,19 @@
     "model": "glm-5.1"
   },
   {
-    "timestamp": "2026-04-21T15:46:50Z",
-    "success": false,
-    "http_status": 503,
-    "latency_ms": null,
-    "token_output": false,
-    "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 2026042115465158520520oGU9OSu6)",
-    "model": "glm-5.1"
+    "timestamp": "2026-04-21T15:47:55Z",
+    "success": true,
+    "http_status": 200,
+    "latency_ms": 8412,
+    "token_output": true,
+    "error_message": null,
+    "model": "GLM-5.1"
   },
   {
-    "timestamp": "2026-04-21T16:44:34Z",
-    "success": false,
-    "http_status": 503,
-    "latency_ms": null,
-    "token_output": false,
-    "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 20260421164435126912642hbsviqLf)",
-    "model": "glm-5.1"
-  },
-  {
-    "timestamp": "2026-04-21T17:46:07Z",
-    "success": false,
-    "http_status": 503,
-    "latency_ms": null,
-    "token_output": false,
-    "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 20260421174607786193633X32ZxI37)",
-    "model": "glm-5.1"
-  },
-  {
-    "timestamp": "2026-04-21T18:50:36Z",
-    "success": false,
-    "http_status": 503,
-    "latency_ms": null,
-    "token_output": false,
-    "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 20260421185036790482051wB2JHN3o)",
-    "model": "glm-5.1"
-  },
-  {
-    "timestamp": "2026-04-21T20:05:52Z",
-    "success": false,
-    "http_status": 503,
-    "latency_ms": null,
-    "token_output": false,
-    "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 202604212005531014252286Rn5VZNs)",
-    "model": "glm-5.1"
-  },
-  {
-    "timestamp": "2026-04-21T21:04:14Z",
-    "success": false,
-    "http_status": 503,
-    "latency_ms": null,
-    "token_output": false,
-    "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 20260421210415620309811jjo559mV)",
-    "model": "glm-5.1"
-  },
-  {
-    "timestamp": "2026-04-21T21:57:38Z",
-    "success": false,
-    "http_status": 503,
-    "latency_ms": null,
-    "token_output": false,
-    "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 202604212157389803543206AfAvLbl)",
-    "model": "glm-5.1"
-  },
-  {
-    "timestamp": "2026-04-21T22:51:44Z",
-    "success": false,
-    "http_status": 503,
-    "latency_ms": null,
-    "token_output": false,
-    "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 202604212251449322198222HmNer9g)",
-    "model": "glm-5.1"
-  },
-  {
-    "timestamp": "2026-04-21T23:40:05Z",
-    "success": false,
-    "http_status": 503,
-    "latency_ms": null,
-    "token_output": false,
-    "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 20260421234005663152619Nl9ylY2n)",
-    "model": "glm-5.1"
-  },
-  {
-    "timestamp": "2026-04-22T01:06:26Z",
-    "success": false,
-    "http_status": 503,
-    "latency_ms": null,
-    "token_output": false,
-    "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 20260422010626609824081pAbaYOqc)",
-    "model": "glm-5.1"
-  },
-  {
-    "timestamp": "2026-04-22T04:17:13Z",
-    "success": false,
-    "http_status": 503,
-    "latency_ms": null,
-    "token_output": false,
-    "error_message": "No available channel for model glm-5.1 under group 国产模型 (distributor) (request id: 20260422041714334197097in7QeOYW)",
-    "model": "glm-5.1"
-  },
-  {
-    "timestamp": "2026-04-22T04:35:10Z",
+    "timestamp": "2026-04-21T16:38:49Z",
     "success": false,
     "http_status": 200,
-    "latency_ms": 1972,
+    "latency_ms": 13297,
     "token_output": false,
     "error_message": "Empty response content",
     "model": "GLM-5.1"
