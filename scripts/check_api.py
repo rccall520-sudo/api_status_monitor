@@ -88,39 +88,61 @@ def probe_api(base_url: str, api_key: str, model: str) -> Dict[str, Any]:
     try:
         req_data = json.dumps(payload).encode("utf-8")
         req = urllib.request.Request(url, data=req_data, headers=headers, method="POST")
-        
+
         start_time = time.time()
         with urllib.request.urlopen(req, timeout=30) as response:
             latency_ms = int((time.time() - start_time) * 1000)
             result["http_status"] = response.status
             result["latency_ms"] = latency_ms
-            
+
             if response.status == 200:
-                body = json.loads(response.read().decode("utf-8"))
-                # 检查是否有输出
-                choices = body.get("choices", [])
-                if choices and len(choices) > 0:
-                    message = choices[0].get("message", {})
-                    content = message.get("content", "")
-                    if content:
-                        result["success"] = True
-                        result["token_output"] = True
-                        result["error_message"] = None
+                raw = response.read().decode("utf-8")
+                try:
+                    body = json.loads(raw)
+                except (json.JSONDecodeError, ValueError):
+                    result["error_message"] = "Invalid JSON response"
+                    return result
+
+                if not isinstance(body, dict):
+                    result["error_message"] = f"Unexpected response type: {type(body).__name__}"
+                    return result
+
+                choices = body.get("choices")
+                if not choices or not isinstance(choices, list) or len(choices) == 0:
+                    # 可能是 OpenAI 兼容格式的错误响应（200 但有 error 字段）
+                    err = body.get("error")
+                    if isinstance(err, dict):
+                        result["error_message"] = err.get("message", str(err))
                     else:
-                        result["error_message"] = "Empty response content"
+                        result["error_message"] = "No choices in response"
+                    return result
+
+                choice = choices[0]
+                if not isinstance(choice, dict):
+                    result["error_message"] = f"Unexpected choice format"
+                    return result
+
+                message = choice.get("message")
+                content = message.get("content", "") if isinstance(message, dict) else ""
+
+                if content:
+                    result["success"] = True
+                    result["token_output"] = True
+                    result["error_message"] = None
                 else:
-                    result["error_message"] = "No choices in response"
+                    result["error_message"] = "Empty response content"
             else:
                 result["error_message"] = f"HTTP {response.status}"
-                
+
     except urllib.error.HTTPError as e:
         result["http_status"] = e.code
         result["error_message"] = f"HTTP {e.code}: {e.reason}"
         try:
             error_body = json.loads(e.read().decode("utf-8"))
-            if "error" in error_body:
-                result["error_message"] = error_body["error"].get("message", str(error_body["error"]))
-        except:
+            if isinstance(error_body, dict) and "error" in error_body:
+                err = error_body["error"]
+                result["error_message"] = err.get("message", str(err)) if isinstance(err, dict) else str(err)
+        except Exception:
             pass
     except urllib.error.URLError as e:
         result["error_message"] = f"Connection error: {e.reason}"
