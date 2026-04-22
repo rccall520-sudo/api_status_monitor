@@ -2,9 +2,8 @@ name: API Status Check
 
 on:
   schedule:
-    # 每10分钟运行一次
     - cron: '0/10 * * * *'
-  workflow_dispatch:  # 手动触发
+  workflow_dispatch:
   push:
     paths:
       - 'scripts/check_api.py'
@@ -21,7 +20,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -36,10 +35,15 @@ jobs:
         run: |
           python scripts/check_api.py
 
-      - name: Commit results
+      - name: Commit and push results
         run: |
           git config user.name "Status Bot"
           git config user.email "bot@example.com"
           git add docs/data/
-          git diff --staged --quiet && echo "No changes" || git commit -m "Update status"
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update status"
+            git pull --rebase origin main
+            git push
+          fi
