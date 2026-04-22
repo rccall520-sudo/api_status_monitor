@@ -1,10 +1,10 @@
 {
-  "last_check": "2026-04-22T16:37:19Z",
+  "last_check": "2026-04-22T16:51:36Z",
   "api_base": "jiuuij.de5.net",
   "model": "GLM-5.1",
-  "http_status": 0,
-  "latency_ms": null,
-  "success": false,
-  "token_output": false,
-  "error_message": "HTTPSConnectionPool(host='jiuuij.de5.net', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violat"
+  "http_status": 200,
+  "latency_ms": 1876,
+  "success": true,
+  "token_output": true,
+  "error_message": null
 }

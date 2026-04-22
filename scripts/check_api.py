@@ -172,7 +172,10 @@ def aggregate_hourly(history: List[Dict]) -> Dict[str, Dict]:
     """按小时聚合历史数据"""
     hourly = {}
     for entry in history:
-        dt = datetime.fromisoformat(entry["timestamp"].replace("Z", "+00:00"))
+        ts = entry.get("timestamp") or entry.get("last_check")
+        if not ts:
+            continue
+        dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
         hour_key = dt.strftime("%Y-%m-%d %H:00")
         
         if hour_key not in hourly:
@@ -188,9 +191,12 @@ def aggregate_hourly(history: List[Dict]) -> Dict[str, Dict]:
 def cleanup_old_history(history: List[Dict], days: int = 7) -> List[Dict]:
     """清理超过N天的历史记录"""
     cutoff = utc_now().timestamp() - days * 24 * 3600
-    return [h for h in history if datetime.fromisoformat(
-        h["timestamp"].replace("Z", "+00:00")
-    ).timestamp() > cutoff]
+    result = []
+    for h in history:
+        ts = h.get("timestamp") or h.get("last_check")
+        if ts and datetime.fromisoformat(ts.replace("Z", "+00:00")).timestamp() > cutoff:
+            result.append(h)
+    return result
 
 
 def main():

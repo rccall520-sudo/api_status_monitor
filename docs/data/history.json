@@ -1,5 +1,15 @@
 [
   {
+    "last_check": "2026-04-23T00:43:37Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 200,
+    "latency_ms": 2289,
+    "success": true,
+    "token_output": true,
+    "error_message": ""
+  },
+  {
     "last_check": "2026-04-22T16:37:19Z",
     "api_base": "jiuuij.de5.net",
     "model": "GLM-5.1",
@@ -990,13 +1000,21 @@
     "error_message": "'NoneType' object is not subscriptable"
   },
   {
-    "last_check": "2026-04-22T08:18:15Z",
-    "api_base": "jiuuij.de5.net",
-    "model": "GLM-5.1",
-    "http_status": 200,
-    "latency_ms": 20601,
+    "timestamp": "2026-04-22T16:50:58Z",
     "success": true,
+    "http_status": 200,
+    "latency_ms": 3757,
     "token_output": true,
-    "error_message": ""
+    "error_message": null,
+    "model": "GLM-5.1"
+  },
+  {
+    "timestamp": "2026-04-22T16:51:36Z",
+    "success": true,
+    "http_status": 200,
+    "latency_ms": 1876,
+    "token_output": true,
+    "error_message": null,
+    "model": "GLM-5.1"
   }
 ]
