@@ -43,6 +43,8 @@ function updateStatus(data) {
 }
 
 function updateStats(history) {
+    if (!history || !Array.isArray(history)) return;
+    
     const total = history.length;
     const success = history.filter(h => h.success).length;
     const uptime = total > 0 ? (success / total * 100).toFixed(1) : 0;
@@ -61,6 +63,10 @@ function updateGrid(history) {
     const grid = document.getElementById('uptime-grid');
     grid.innerHTML = '';
     
+    if (!history || !Array.isArray(history)) {
+        return; // 数据为空时跳过
+    }
+    
     // 按小时分组（最近24小时）
     const hourly = {};
     const now = new Date();
@@ -71,9 +77,12 @@ function updateGrid(history) {
         hourly[key] = null;
     }
     
-    // 填充数据
+    // 填充数据 - 兼容 timestamp 和 last_check 字段
     history.forEach(h => {
-        const key = h.timestamp.slice(0, 13);
+        const timestamp = h.timestamp || h.last_check;
+        if (!timestamp) return;
+        
+        const key = timestamp.slice(0, 13);
         if (key in hourly) {
             if (hourly[key] === null) {
                 hourly[key] = h.success;
@@ -96,6 +105,8 @@ function updateHistoryList(history) {
     const list = document.getElementById('history-list');
     list.innerHTML = '';
     
+    if (!history || !Array.isArray(history)) return;
+    
     // 显示最近20条
     const recent = history.slice(-20).reverse();
     
@@ -108,9 +119,13 @@ function updateHistoryList(history) {
         
         const info = document.createElement('div');
         info.className = 'history-info';
+        
+        const timestamp = h.timestamp || h.last_check;
+        const error = h.error_message || '';
+        
         info.innerHTML = `
-            <div class="history-time">${formatTime(h.timestamp)}</div>
-            <div class="history-status">${h.success ? '正常响应' : (h.error_message || '请求失败')}</div>
+            <div class="history-time">${formatTime(timestamp)}</div>
+            <div class="history-status">${h.success ? '正常响应' : (error || '请求失败')}</div>
         `;
         
         const latency = document.createElement('span');
