@@ -66,7 +66,7 @@ def probe_api(base_url: str, api_key: str, model: str) -> Dict[str, Any]:
     payload = {
         "model": model,
         "messages": [{"role": "user", "content": "Hi"}],
-        "max_tokens": 1,
+        "max_tokens": 5,
         "stream": False
     }
     
@@ -125,10 +125,10 @@ def probe_api(base_url: str, api_key: str, model: str) -> Dict[str, Any]:
                 message = choice.get("message")
                 content = message.get("content", "") if isinstance(message, dict) else ""
 
+                result["success"] = True
+                result["error_message"] = None
                 if content:
-                    result["success"] = True
                     result["token_output"] = True
-                    result["error_message"] = None
                 else:
                     result["error_message"] = "Empty response content"
             else:
