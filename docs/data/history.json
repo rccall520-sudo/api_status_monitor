@@ -1160,5 +1160,14 @@
     "token_output": true,
     "error_message": null,
     "model": "GLM-5.1"
+  },
+  {
+    "timestamp": "2026-04-23T02:03:49Z",
+    "success": false,
+    "http_status": null,
+    "latency_ms": null,
+    "token_output": false,
+    "error_message": "Error: The read operation timed out",
+    "model": "GLM-5.1"
   }
 ]
