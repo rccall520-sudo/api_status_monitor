@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-04-23T02:16:33Z",
+  "timestamp": "2026-04-23T02:26:57Z",
   "success": true,
   "http_status": 200,
-  "latency_ms": 19721,
-  "token_output": true,
+  "latency_ms": 3933,
+  "token_output": false,
   "error_message": null,
   "model": "GLM-5.1",
-  "last_check": "2026-04-23T02:16:33Z"
+  "last_check": "2026-04-23T02:26:57Z"
 }
