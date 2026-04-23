@@ -1,10 +1,10 @@
 {
-  "last_check": "2026-04-23T14:16:00Z",
+  "last_check": "2026-04-23T17:50:38Z",
   "api_base": "jiuuij.de5.net",
   "model": "GLM-5.1",
-  "http_status": 200,
-  "latency_ms": 13422,
-  "success": true,
+  "http_status": null,
+  "latency_ms": null,
+  "success": false,
   "token_output": false,
-  "error_message": null
+  "error_message": "Error: The read operation timed out"
 }
