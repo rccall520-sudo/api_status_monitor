@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-04-23T02:37:04Z",
-  "success": true,
-  "http_status": 200,
-  "latency_ms": 1928,
-  "token_output": true,
-  "error_message": null,
+  "timestamp": "2026-04-23T02:47:10Z",
+  "success": false,
+  "http_status": 404,
+  "latency_ms": null,
+  "token_output": false,
+  "error_message": "no any schema route found",
   "model": "GLM-5.1",
-  "last_check": "2026-04-23T02:37:04Z"
+  "last_check": "2026-04-23T02:47:10Z"
 }
