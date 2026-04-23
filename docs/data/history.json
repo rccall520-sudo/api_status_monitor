@@ -1142,5 +1142,23 @@
     "token_output": false,
     "error_message": null,
     "model": "GLM-5.1"
+  },
+  {
+    "timestamp": "2026-04-23T01:56:53Z",
+    "success": true,
+    "http_status": 200,
+    "latency_ms": 16082,
+    "token_output": false,
+    "error_message": null,
+    "model": "GLM-5.1"
+  },
+  {
+    "timestamp": "2026-04-23T02:01:34Z",
+    "success": true,
+    "http_status": 200,
+    "latency_ms": 7166,
+    "token_output": true,
+    "error_message": null,
+    "model": "GLM-5.1"
   }
 ]
