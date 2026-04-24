@@ -1421,5 +1421,14 @@
     "token_output": false,
     "error_message": "Error: The read operation timed out",
     "model": "GLM-5.1"
+  },
+  {
+    "timestamp": "2026-04-24T11:33:02Z",
+    "success": false,
+    "http_status": 404,
+    "latency_ms": null,
+    "token_output": false,
+    "error_message": "no any schema route found",
+    "model": "GLM-5.1"
   }
 ]
