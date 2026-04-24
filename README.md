@@ -1,109 +1,128 @@
 # API Status Monitor
 
-一个轻量级的API可用性监测站，支持自动定时检测和可视化展示。
+一个轻量级的 API 可用性监测站，支持统一配置多个站点和多个模型，并自动生成静态监控页。
 
 ## 功能特性
 
-- 自动定时探测API可用性（每10分钟）
-- 记录HTTP状态、响应延迟、错误信息
-- 7天历史数据统计和可用率计算
-- 24小时可用性热力图展示
-- 纯静态页面，可部署到GitHub Pages
+- 统一配置多个站点和模型
+- 每 10 分钟自动探测一次
+- 记录 HTTP 状态、响应延迟、错误信息
+- 展示全部目标的当前状态、最近 24 小时格子图、最近检测记录
+- 纯静态页面，可部署到 GitHub Pages
+- 兼容旧版单站点环境变量配置
 
 ## 项目结构
 
-```
+```text
 api_status_monitor/
-├── .github/
-│   └── workflows/
-│       └── status-check.yml   # GitHub Actions定时任务
+├── .github/workflows/status-check.yml
 ├── docs/
-│   ├── index.html             # 状态展示页面
-│   ├── style.css              # 样式文件
-│   ├── app.js                 # 前端交互脚本
+│   ├── index.html
+│   ├── style.css
+│   ├── app.js
 │   └── data/
-│       ├── status.json        # 当前状态
-│       └── history.json       # 历史记录
-├── scripts/
-│   └── check_api.py           # 探测脚本
-├── .env.example               # 环境变量示例
-├── .gitignore
-├── requirements.txt
+│       ├── status.json
+│       └── history.json
+├── scripts/check_api.py
+├── monitor_daemon.py
+├── .env.example
 └── README.md
 ```
 
-## 快速开始
+## 配置方式
 
-### 1. Fork本项目到你的GitHub账号
+### 推荐：统一配置多个站点和模型
 
-### 2. 配置Secrets
+在本地 `.env` 或 GitHub Actions Secret `MONITOR_TARGETS` 中配置一个 JSON 数组：
 
-进入仓库 Settings → Secrets and variables → Actions，添加：
+```json
+[
+  {
+    "name": "OpenAI GPT-4o mini",
+    "base_url": "https://api.openai.com/v1",
+    "api_key": "sk-xxxxx",
+    "model": "gpt-4o-mini"
+  },
+  {
+    "name": "GLM 主站",
+    "base_url": "https://example.com/v1",
+    "api_key": "your_key",
+    "model": "GLM-5.1"
+  }
+]
+```
 
-| Secret名称 | 说明 |
-|-----------|------|
-| `API_BASE_URL` | API地址，如 `https://api.example.com/v1` |
-| `API_KEY` | 你的API密钥 |
-| `API_MODEL` | 探测模型，如 `gpt-3.5-turbo` |
+字段说明：
 
-### 3. 启用GitHub Pages
+- `name`: 页面展示名称
+- `base_url`: 接口基础地址
+- `api_key`: 该目标自己的密钥
+- `model`: 要探测的模型名
+- `target_id`: 可选，自定义唯一标识；不填会自动生成
 
-进入 Settings → Pages：
-- Source选择 `Deploy from a branch`
-- Branch选择 `main`，目录选择 `/docs`
-- 点击Save
+### 兼容：旧版单站点配置
 
-### 4. 手动触发首次运行
-
-进入 Actions → API Status Check → Run workflow
-
-之后每10分钟会自动运行一次。
-
-## 本地测试
+如果没有配置 `MONITOR_TARGETS`，脚本会回退到以下变量：
 
 ```bash
-# 1. 克隆项目
-git clone https://github.com/你的用户名/api_status_monitor.git
-cd api_status_monitor
-
-# 2. 创建配置文件
-cp .env.example .env
-# 编辑.env填写你的API配置
-
-# 3. 运行探测脚本（Python 3.8+）
-python scripts/check_api.py
-
-# 4. 本地查看页面
-cd docs
-python -m http.server 8080
-# 浏览器打开 http://localhost:8080
+API_BASE_URL=https://api.example.com/v1
+API_KEY=your_api_key
+API_MODEL=gpt-4o-mini
 ```
+
+## GitHub Actions 配置
+
+进入仓库 `Settings -> Secrets and variables -> Actions`，推荐添加：
+
+- `MONITOR_TARGETS`
+
+如果你暂时还在用旧版单目标方式，也可以继续保留：
+
+- `API_BASE_URL`
+- `API_KEY`
+- `API_MODEL`
+
+配置完成后，工作流会每 10 分钟运行一次，并更新 `docs/data/status.json` 与 `docs/data/history.json`。
+
+## 本地使用
+
+```bash
+# 1. 复制配置模板
+cp .env.example .env
+
+# 2. 编辑 .env，填入 MONITOR_TARGETS 或旧版单目标变量
+
+# 3. 手动执行一次检测
+python3 scripts/check_api.py
+
+# 4. 启动本地静态页面
+cd docs
+python3 -m http.server 8080
+```
+
+浏览器访问 `http://localhost:8080`。
+
+## 本地守护进程
+
+如果你想在本机持续检测，可以运行：
+
+```bash
+python3 monitor_daemon.py
+```
+
+可选环境变量：
+
+- `CHECK_INTERVAL_SECONDS`: 检测间隔秒数，默认 `600`
+
+## 页面说明
+
+- `全局概览`: 汇总全部目标数量、当前在线数、历史检测次数、平均延迟
+- `监控目标`: 每个站点和模型组合对应一张卡片
+- `最近24小时`: 每个目标一行小时格子图
+- `最近检测记录`: 混合展示所有目标的最新结果
 
 ## 隐私安全
 
-- API Key仅存储在GitHub Secrets中，不会出现在代码中
-- 状态页面只显示域名，不显示完整URL和Key
-- 建议使用只读权限的API Key进行监测
-
-## 自定义
-
-### 修改检测频率
-
-编辑 `.github/workflows/status-check.yml`：
-
-```yaml
-schedule:
-  - cron: '0/10 * * * *'  # 改为你需要的时间
-```
-
-### 修改探测模型
-
-在Secrets中修改 `API_MODEL` 的值。
-
-### 修改历史保留天数
-
-编辑 `scripts/check_api.py`，修改 `HISTORY_DAYS` 常量。
-
-## 致谢
-
-参考项目: [anyrouter-status-page](https://github.com/KMnO4-zx/anyrouter-status-page)
+- API Key 只用于探测请求，不会写入公开页面
+- 页面只展示域名、模型、状态、延迟和错误信息
+- 建议使用权限受限的专用 Key

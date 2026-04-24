@@ -1,10 +1,25 @@
 {
-  "timestamp": "2026-04-24T17:31:10Z",
-  "success": false,
-  "http_status": null,
-  "latency_ms": null,
-  "token_output": false,
-  "error_message": "Connection error: [Errno 61] Connection refused",
-  "model": "GLM-5.1",
-  "last_check": "2026-04-24T17:31:10Z"
+  "version": 2,
+  "updated_at": "2026-04-24T17:38:47Z",
+  "summary": {
+    "target_count": 1,
+    "online_count": 0,
+    "offline_count": 1,
+    "overall_success": false
+  },
+  "targets": [
+    {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-04-24T17:38:47Z",
+      "last_check": "2026-04-24T17:38:47Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "http_status": null,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "Connection error: [Errno 8] nodename nor servname provided, or not known"
+    }
+  ]
 }

@@ -34,6 +34,7 @@ jobs:
 
       - name: Run status check
         env:
+          MONITOR_TARGETS: ${{ secrets.MONITOR_TARGETS }}
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
           API_KEY: ${{ secrets.API_KEY }}
           API_MODEL: ${{ secrets.API_MODEL }}
