@@ -15,8 +15,10 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+from urllib.parse import urlparse
 
 # 配置常量
+DEFAULT_MODEL = "gpt-3.5-turbo"
 HISTORY_DAYS = 7
 HOURS_IN_HISTORY = 24 * HISTORY_DAYS
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -46,6 +48,65 @@ def utc_now() -> datetime:
 def iso_z(dt: datetime) -> str:
     """ISO格式时间戳"""
     return dt.astimezone(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def get_env(name: str, default: str = "") -> str:
+    """读取环境变量，空字符串时回退到默认值。"""
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    value = value.strip()
+    return value or default
+
+
+def parse_iso(value: Any) -> Optional[datetime]:
+    """解析ISO时间，兼容Z后缀。"""
+    if not isinstance(value, str) or not value:
+        return None
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
+def extract_api_base(base_url: str) -> str:
+    """从完整地址中提取域名，用于前端展示。"""
+    if not base_url:
+        return "-"
+    parsed = urlparse(base_url if "://" in base_url else f"https://{base_url}")
+    return parsed.netloc or parsed.path.split("/")[0] or "-"
+
+
+def normalize_result(entry: Dict[str, Any], base_url: str, model: str) -> Dict[str, Any]:
+    """统一状态与历史数据结构，兼容旧记录。"""
+    timestamp = entry.get("timestamp") or entry.get("last_check") or iso_z(utc_now())
+    return {
+        "timestamp": timestamp,
+        "last_check": timestamp,
+        "api_base": entry.get("api_base") or extract_api_base(base_url),
+        "model": entry.get("model") or model,
+        "http_status": entry.get("http_status"),
+        "latency_ms": entry.get("latency_ms"),
+        "success": bool(entry.get("success")),
+        "token_output": bool(entry.get("token_output")),
+        "error_message": entry.get("error_message") or "",
+    }
+
+
+def normalize_history(history: Any, base_url: str, model: str) -> List[Dict[str, Any]]:
+    """清洗旧历史记录并按时间升序排序。"""
+    if not isinstance(history, list):
+        return []
+
+    normalized: List[Dict[str, Any]] = []
+    for entry in history:
+        if isinstance(entry, dict):
+            normalized.append(normalize_result(entry, base_url, model))
+
+    normalized.sort(
+        key=lambda entry: parse_iso(entry.get("timestamp")) or datetime.min.replace(tzinfo=timezone.utc)
+    )
+    return normalized
 
 
 def make_url(base: str, path: str) -> str:
@@ -154,7 +215,7 @@ def load_json_or_default(path: Path, default: Any) -> Any:
         return default
     try:
         return json.loads(path.read_text(encoding="utf-8"))
-    except:
+    except Exception:
         return default
 
 
@@ -171,7 +232,9 @@ def aggregate_hourly(history: List[Dict]) -> Dict[str, Dict]:
         ts = entry.get("timestamp") or entry.get("last_check")
         if not ts:
             continue
-        dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+        dt = parse_iso(ts)
+        if dt is None:
+            continue
         hour_key = dt.strftime("%Y-%m-%d %H:00")
         
         if hour_key not in hourly:
@@ -190,7 +253,8 @@ def cleanup_old_history(history: List[Dict], days: int = 7) -> List[Dict]:
     result = []
     for h in history:
         ts = h.get("timestamp") or h.get("last_check")
-        if ts and datetime.fromisoformat(ts.replace("Z", "+00:00")).timestamp() > cutoff:
+        dt = parse_iso(ts)
+        if dt and dt.timestamp() > cutoff:
             result.append(h)
     return result
 
@@ -199,9 +263,9 @@ def main():
     # 加载环境变量
     load_dotenv(PROJECT_ROOT / ".env")
     
-    base_url = os.environ.get("API_BASE_URL", "")
-    api_key = os.environ.get("API_KEY", "")
-    model = os.environ.get("API_MODEL", "gpt-3.5-turbo")
+    base_url = get_env("API_BASE_URL")
+    api_key = get_env("API_KEY")
+    model = get_env("API_MODEL", DEFAULT_MODEL)
     
     if not base_url or not api_key:
         print("错误: 请配置 API_BASE_URL 和 API_KEY")
@@ -213,32 +277,23 @@ def main():
     
     # 执行探测
     result = probe_api(base_url, api_key, model)
+    status = normalize_result(result, base_url, model)
     
     print(f"\n结果:")
-    print(f"  HTTP状态: {result['http_status'] or 'N/A'}")
-    print(f"  延迟: {result['latency_ms']}ms" if result['latency_ms'] else "  延迟: N/A")
-    print(f"  成功: {'✓' if result['success'] else '✗'}")
-    print(f"  输出token: {'✓' if result['token_output'] else '✗'}")
-    if result['error_message']:
-        print(f"  错误: {result['error_message']}")
+    print(f"  HTTP状态: {status['http_status'] or 'N/A'}")
+    print(f"  延迟: {status['latency_ms']}ms" if status['latency_ms'] else "  延迟: N/A")
+    print(f"  成功: {'✓' if status['success'] else '✗'}")
+    print(f"  输出token: {'✓' if status['token_output'] else '✗'}")
+    if status["error_message"]:
+        print(f"  错误: {status['error_message']}")
     
     # 更新状态文件
-    status = {
-        "last_check": result["timestamp"],
-        "api_base": base_url.split("//")[-1].split("/")[0],  # 只显示域名
-        "model": model,
-        "http_status": result["http_status"],
-        "latency_ms": result["latency_ms"],
-        "success": result["success"],
-        "token_output": result["token_output"],
-        "error_message": result["error_message"]
-    }
     save_json(STATUS_PATH, status)
     print(f"\n状态已保存到: {STATUS_PATH}")
     
     # 更新历史文件
-    history = load_json_or_default(HISTORY_PATH, [])
-    history.append(result)
+    history = normalize_history(load_json_or_default(HISTORY_PATH, []), base_url, model)
+    history.append(status)
     history = cleanup_old_history(history, HISTORY_DAYS)
     save_json(HISTORY_PATH, history)
     

@@ -1,11 +1,52 @@
+function parseTime(value) {
+    if (!value) return null;
+    const date = new Date(value);
+    return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function getEntryTime(entry) {
+    return entry.last_check || entry.timestamp || '';
+}
+
+function normalizeEntry(entry) {
+    const source = entry && typeof entry === 'object' ? entry : {};
+    const lastCheck = getEntryTime(source);
+    const latency = Number.isFinite(source.latency_ms) ? source.latency_ms : null;
+
+    return {
+        timestamp: source.timestamp || lastCheck || '',
+        last_check: lastCheck || '',
+        api_base: source.api_base || '-',
+        model: source.model || '-',
+        http_status: source.http_status ?? null,
+        latency_ms: latency,
+        success: Boolean(source.success),
+        token_output: Boolean(source.token_output),
+        error_message: source.error_message || '',
+    };
+}
+
+function normalizeHistory(history) {
+    if (!Array.isArray(history)) return [];
+
+    return history
+        .map(normalizeEntry)
+        .filter(entry => parseTime(getEntryTime(entry)))
+        .sort((left, right) => parseTime(getEntryTime(left)) - parseTime(getEntryTime(right)));
+}
+
 async function loadData() {
     try {
-        const statusRes = await fetch('data/status.json?t=' + Date.now());
-        const status = await statusRes.json();
-        updateStatus(status);
+        const cacheBuster = '?t=' + Date.now();
+        const [statusRes, historyRes] = await Promise.all([
+            fetch('data/status.json' + cacheBuster),
+            fetch('data/history.json' + cacheBuster),
+        ]);
 
-        const historyRes = await fetch('data/history.json?t=' + Date.now());
-        const history = await historyRes.json();
+        const status = normalizeEntry(await statusRes.json());
+        const history = normalizeHistory(await historyRes.json());
+
+        updateStatus(status);
         updateStats(history);
         updateGrid(history);
         updateHistoryList(history);
@@ -17,6 +58,8 @@ async function loadData() {
 function updateStatus(data) {
     const dot = document.getElementById('status-dot');
     const text = document.getElementById('status-text');
+    const errorBox = document.getElementById('error-box');
+    const errorMessage = document.getElementById('error-message');
 
     if (data.success) {
         dot.className = 'status-indicator online';
@@ -28,34 +71,36 @@ function updateStatus(data) {
 
     document.getElementById('api-base').textContent = data.api_base || '-';
     document.getElementById('model').textContent = data.model || '-';
-    document.getElementById('http-status').textContent = data.http_status || '-';
-    document.getElementById('latency').textContent = data.latency_ms ? data.latency_ms + 'ms' : '-';
-    document.getElementById('last-check').textContent = formatTime(data.last_check);
+    document.getElementById('http-status').textContent = data.http_status ?? '-';
+    document.getElementById('latency').textContent = data.latency_ms !== null ? data.latency_ms + 'ms' : '-';
+    document.getElementById('last-check').textContent = formatTime(getEntryTime(data));
 
     if (data.error_message) {
-        document.getElementById('error-box').style.display = 'block';
-        document.getElementById('error-message').textContent = data.error_message;
+        errorBox.style.display = 'block';
+        errorMessage.textContent = data.error_message;
+    } else {
+        errorBox.style.display = 'none';
+        errorMessage.textContent = '';
     }
 }
 
 function updateStats(history) {
-    if (!history || !Array.isArray(history)) return;
-
     const total = history.length;
-    const success = history.filter(h => h.success).length;
-    const uptime = total > 0 ? (success / total * 100).toFixed(1) : 0;
+    const success = history.filter(entry => entry.success).length;
+    const uptime = total > 0 ? (success / total * 100).toFixed(1) : '0.0';
 
-    const latencies = history.filter(h => h.latency_ms).map(h => h.latency_ms);
+    const latencies = history
+        .map(entry => entry.latency_ms)
+        .filter(latency => Number.isFinite(latency));
     const avgLatency = latencies.length > 0
-        ? Math.round(latencies.reduce((a, b) => a + b, 0) / latencies.length)
-        : 0;
+        ? Math.round(latencies.reduce((sum, latency) => sum + latency, 0) / latencies.length)
+        : null;
 
     document.getElementById('uptime-percent').textContent = uptime + '%';
     document.getElementById('total-checks').textContent = total;
-    document.getElementById('avg-latency').textContent = avgLatency + 'ms';
+    document.getElementById('avg-latency').textContent = avgLatency !== null ? avgLatency + 'ms' : '-';
 }
 
-// 按北京时间取整点 key，如 "2026-04-23T14"
 function bjHourKey(date) {
     const bj = new Date(date.getTime() + 8 * 3600000);
     const y = bj.getUTCFullYear();
@@ -69,34 +114,32 @@ function updateGrid(history) {
     const grid = document.getElementById('uptime-grid');
     grid.innerHTML = '';
 
-    if (!history || !Array.isArray(history)) return;
-
-    // 生成最近24个北京时间的整点槽位
     const hourly = {};
     const now = new Date();
-    for (let i = 23; i >= 0; i--) {
+    for (let i = 23; i >= 0; i -= 1) {
         const hour = new Date(now.getTime() - i * 3600000);
         hourly[bjHourKey(hour)] = null;
     }
 
-    // 填充数据
-    history.forEach(h => {
-        const ts = h.timestamp || h.last_check;
-        if (!ts) return;
-        const key = bjHourKey(new Date(ts));
-        if (key in hourly) {
-            if (hourly[key] === null) {
-                hourly[key] = h.success;
-            } else if (hourly[key] !== h.success) {
-                hourly[key] = 'partial';
-            }
+    history.forEach(entry => {
+        const date = parseTime(getEntryTime(entry));
+        if (!date) return;
+
+        const key = bjHourKey(date);
+        if (!(key in hourly)) return;
+
+        if (hourly[key] === null) {
+            hourly[key] = entry.success;
+        } else if (hourly[key] !== entry.success) {
+            hourly[key] = 'partial';
         }
     });
 
-    Object.values(hourly).forEach(val => {
+    Object.values(hourly).forEach(value => {
         const cell = document.createElement('div');
-        cell.className = 'cell ' + (val === true ? 'success' : val === false ? 'fail' : '');
-        cell.title = val === true ? '正常' : val === false ? '异常' : '无数据';
+        const stateClass = value === true ? 'success' : value === false ? 'fail' : '';
+        cell.className = 'cell ' + stateClass;
+        cell.title = value === true ? '正常' : value === false ? '异常' : value === 'partial' ? '部分异常' : '无数据';
         grid.appendChild(cell);
     });
 }
@@ -105,31 +148,30 @@ function updateHistoryList(history) {
     const list = document.getElementById('history-list');
     list.innerHTML = '';
 
-    if (!history || !Array.isArray(history)) return;
-
-    const recent = history.slice(-20).reverse();
-
-    recent.forEach(h => {
+    history.slice(-20).reverse().forEach(entry => {
         const item = document.createElement('div');
         item.className = 'history-item';
 
         const icon = document.createElement('span');
-        icon.className = 'history-icon ' + (h.success ? 'success' : 'fail');
+        icon.className = 'history-icon ' + (entry.success ? 'success' : 'fail');
 
         const info = document.createElement('div');
         info.className = 'history-info';
 
-        const ts = h.timestamp || h.last_check;
-        const error = h.error_message || '';
+        const timeNode = document.createElement('div');
+        timeNode.className = 'history-time';
+        timeNode.textContent = formatTime(getEntryTime(entry));
 
-        info.innerHTML = `
-            <div class="history-time">${formatTime(ts)}</div>
-            <div class="history-status">${h.success ? '正常响应' : (error || '请求失败')}</div>
-        `;
+        const statusNode = document.createElement('div');
+        statusNode.className = 'history-status';
+        statusNode.textContent = entry.success ? '正常响应' : (entry.error_message || '请求失败');
+
+        info.appendChild(timeNode);
+        info.appendChild(statusNode);
 
         const latency = document.createElement('span');
         latency.className = 'history-latency';
-        latency.textContent = h.latency_ms ? h.latency_ms + 'ms' : '-';
+        latency.textContent = entry.latency_ms !== null ? entry.latency_ms + 'ms' : '-';
 
         item.appendChild(icon);
         item.appendChild(info);
@@ -139,20 +181,27 @@ function updateHistoryList(history) {
 }
 
 function formatTime(iso) {
-    if (!iso) return '-';
-    const d = new Date(iso);
-    return d.toLocaleString('zh-CN', {
+    const date = parseTime(iso);
+    if (!date) return '-';
+
+    return date.toLocaleString('zh-CN', {
         timeZone: 'Asia/Shanghai',
+        year: 'numeric',
         month: '2-digit',
         day: '2-digit',
         hour: '2-digit',
-        minute: '2-digit'
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
     });
 }
 
 function showError(msg) {
+    const errorBox = document.getElementById('error-box');
     document.getElementById('status-text').textContent = msg;
     document.getElementById('status-dot').className = 'status-indicator offline';
+    errorBox.style.display = 'block';
+    document.getElementById('error-message').textContent = msg;
 }
 
 loadData();
