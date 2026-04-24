@@ -1,10 +1,10 @@
 {
-  "last_check": "2026-04-24T11:33:02Z",
+  "last_check": "2026-04-24T12:41:59Z",
   "api_base": "jiuuij.de5.net",
   "model": "GLM-5.1",
-  "http_status": 404,
+  "http_status": 503,
   "latency_ms": null,
   "success": false,
   "token_output": false,
-  "error_message": "no any schema route found"
+  "error_message": "No active API keys available for this group"
 }
