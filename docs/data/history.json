@@ -1692,5 +1692,14 @@
     "success": false,
     "token_output": false,
     "error_message": "No active API keys available for this group"
+  },
+  {
+    "timestamp": "2026-04-24T17:31:10Z",
+    "success": false,
+    "http_status": null,
+    "latency_ms": null,
+    "token_output": false,
+    "error_message": "Connection error: [Errno 61] Connection refused",
+    "model": "GLM-5.1"
   }
 ]

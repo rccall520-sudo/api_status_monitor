@@ -1,11 +1,10 @@
 {
-  "timestamp": "2026-04-24T17:18:57Z",
-  "last_check": "2026-04-24T17:18:57Z",
-  "api_base": "jiuuij.de5.net",
-  "model": "GLM-5.1",
-  "http_status": 503,
-  "latency_ms": null,
+  "timestamp": "2026-04-24T17:31:10Z",
   "success": false,
+  "http_status": null,
+  "latency_ms": null,
   "token_output": false,
-  "error_message": "No active API keys available for this group"
+  "error_message": "Connection error: [Errno 61] Connection refused",
+  "model": "GLM-5.1",
+  "last_check": "2026-04-24T17:31:10Z"
 }
