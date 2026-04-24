@@ -1681,5 +1681,16 @@
     "success": false,
     "token_output": false,
     "error_message": "Connection error: [Errno 8] nodename nor servname provided, or not known"
+  },
+  {
+    "timestamp": "2026-04-24T17:18:57Z",
+    "last_check": "2026-04-24T17:18:57Z",
+    "api_base": "jiuuij.de5.net",
+    "model": "GLM-5.1",
+    "http_status": 503,
+    "latency_ms": null,
+    "success": false,
+    "token_output": false,
+    "error_message": "No active API keys available for this group"
   }
 ]
