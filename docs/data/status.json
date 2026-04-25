@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-04-25T21:32:14Z",
+  "updated_at": "2026-04-25T22:04:45Z",
   "summary": {
     "target_count": 3,
     "online_count": 0,
@@ -11,8 +11,8 @@
     {
       "target_id": "anyrouter",
       "target_name": "anyrouter",
-      "timestamp": "2026-04-25T21:32:12Z",
-      "last_check": "2026-04-25T21:32:12Z",
+      "timestamp": "2026-04-25T22:04:44Z",
+      "last_check": "2026-04-25T22:04:44Z",
       "api_base": "anyrouter.top",
       "model": "claude-opus-4-7[1m]",
       "request_format": "anthropic",
@@ -25,22 +25,22 @@
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-04-25T21:32:11Z",
-      "last_check": "2026-04-25T21:32:11Z",
+      "timestamp": "2026-04-25T22:04:42Z",
+      "last_check": "2026-04-25T22:04:42Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
-      "http_status": 503,
+      "http_status": 404,
       "latency_ms": null,
       "success": false,
       "token_output": false,
-      "error_message": "No active API keys available for this group"
+      "error_message": "no any schema route found"
     },
     {
       "target_id": "thatapi",
       "target_name": "thatapi",
-      "timestamp": "2026-04-25T21:32:12Z",
-      "last_check": "2026-04-25T21:32:12Z",
+      "timestamp": "2026-04-25T22:04:44Z",
+      "last_check": "2026-04-25T22:04:44Z",
       "api_base": "gyapi.zxiaoruan.cn",
       "model": "glm-5.1",
       "request_format": "openai",
