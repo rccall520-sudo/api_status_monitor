@@ -1,31 +1,31 @@
 {
   "version": 2,
-  "updated_at": "2026-04-25T09:06:43Z",
+  "updated_at": "2026-04-25T10:01:54Z",
   "summary": {
     "target_count": 2,
-    "online_count": 1,
-    "offline_count": 1,
+    "online_count": 0,
+    "offline_count": 2,
     "overall_success": false
   },
   "targets": [
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-04-25T09:06:41Z",
-      "last_check": "2026-04-25T09:06:41Z",
+      "timestamp": "2026-04-25T10:01:23Z",
+      "last_check": "2026-04-25T10:01:23Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
-      "http_status": 200,
-      "latency_ms": 2096,
-      "success": true,
+      "http_status": null,
+      "latency_ms": null,
+      "success": false,
       "token_output": false,
-      "error_message": ""
+      "error_message": "Error: The read operation timed out"
     },
     {
       "target_id": "thatapi",
       "target_name": "thatapi",
-      "timestamp": "2026-04-25T09:06:43Z",
-      "last_check": "2026-04-25T09:06:43Z",
+      "timestamp": "2026-04-25T10:01:53Z",
+      "last_check": "2026-04-25T10:01:53Z",
       "api_base": "gyapi.zxiaoruan.cn",
       "model": "glm-5.1",
       "http_status": 403,
