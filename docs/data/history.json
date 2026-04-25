@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-04-25T15:24:04Z",
+  "updated_at": "2026-04-25T16:02:58Z",
   "entries": [
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
@@ -345,6 +345,32 @@
       "target_name": "thatapi",
       "timestamp": "2026-04-25T15:24:03Z",
       "last_check": "2026-04-25T15:24:03Z",
+      "api_base": "gyapi.zxiaoruan.cn",
+      "model": "glm-5.1",
+      "http_status": 403,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "HTTP 403: Forbidden"
+    },
+    {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-04-25T16:02:55Z",
+      "last_check": "2026-04-25T16:02:55Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "http_status": 503,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "No active API keys available for this group"
+    },
+    {
+      "target_id": "thatapi",
+      "target_name": "thatapi",
+      "timestamp": "2026-04-25T16:02:57Z",
+      "last_check": "2026-04-25T16:02:57Z",
       "api_base": "gyapi.zxiaoruan.cn",
       "model": "glm-5.1",
       "http_status": 403,
