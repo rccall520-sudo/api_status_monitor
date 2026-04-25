@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-04-25T00:02:42Z",
+  "updated_at": "2026-04-25T03:29:14Z",
   "summary": {
     "target_count": 1,
     "online_count": 0,
@@ -11,8 +11,8 @@
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-04-25T00:02:11Z",
-      "last_check": "2026-04-25T00:02:11Z",
+      "timestamp": "2026-04-25T03:28:43Z",
+      "last_check": "2026-04-25T03:28:43Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "http_status": null,
