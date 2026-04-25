@@ -1,38 +1,25 @@
 {
   "version": 2,
-  "updated_at": "2026-04-25T04:50:49Z",
+  "updated_at": "2026-04-25T05:27:52Z",
   "summary": {
-    "target_count": 2,
-    "online_count": 0,
-    "offline_count": 2,
-    "overall_success": false
+    "target_count": 1,
+    "online_count": 1,
+    "offline_count": 0,
+    "overall_success": true
   },
   "targets": [
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-04-25T04:50:49Z",
-      "last_check": "2026-04-25T04:50:49Z",
+      "timestamp": "2026-04-25T05:27:50Z",
+      "last_check": "2026-04-25T05:27:50Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
-      "http_status": null,
-      "latency_ms": null,
-      "success": false,
+      "http_status": 200,
+      "latency_ms": 2060,
+      "success": true,
       "token_output": false,
-      "error_message": "Connection error: [Errno 8] nodename nor servname provided, or not known"
-    },
-    {
-      "target_id": "thatapi",
-      "target_name": "thatapi",
-      "timestamp": "2026-04-25T04:50:49Z",
-      "last_check": "2026-04-25T04:50:49Z",
-      "api_base": "gyapi.zxiaoruan.cn",
-      "model": "glm-5.1",
-      "http_status": null,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "Connection error: [Errno 8] nodename nor servname provided, or not known"
+      "error_message": ""
     }
   ]
 }
