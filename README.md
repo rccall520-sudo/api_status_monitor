@@ -48,6 +48,13 @@ api_status_monitor/
     "base_url": "https://example.com/v1",
     "api_key": "your_key",
     "model": "GLM-5.1"
+  },
+  {
+    "name": "Anthropic 兼容站点",
+    "base_url": "https://example.com",
+    "api_key": "sk-xxxxx",
+    "model": "claude-opus-4-1",
+    "request_format": "anthropic"
   }
 ]
 ```
@@ -58,6 +65,7 @@ api_status_monitor/
 - `base_url`: 接口基础地址
 - `api_key`: 该目标自己的密钥
 - `model`: 要探测的模型名
+- `request_format`: 可选，请求格式，默认 `openai`，Anthropic 格式填 `anthropic`
 - `target_id`: 可选，自定义唯一标识；不填会自动生成
 
 ### 兼容：旧版单站点配置

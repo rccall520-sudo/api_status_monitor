@@ -115,11 +115,14 @@ def normalize_target_config(raw: Dict[str, Any], index: int) -> Dict[str, str]:
     ).strip()
     api_key = str(raw.get("api_key") or raw.get("key") or get_env("API_KEY")).strip()
     model = str(raw.get("model") or get_env("API_MODEL", DEFAULT_MODEL)).strip() or DEFAULT_MODEL
+    request_format = str(raw.get("request_format") or raw.get("format") or "openai").strip().lower() or "openai"
 
     if not base_url:
         raise ValueError(f"第 {index + 1} 个监控目标缺少 base_url")
     if not api_key:
         raise ValueError(f"第 {index + 1} 个监控目标缺少 api_key")
+    if request_format not in {"openai", "anthropic"}:
+        raise ValueError(f"第 {index + 1} 个监控目标的 request_format 只支持 openai 或 anthropic")
 
     api_base = extract_api_base(base_url)
     name = str(raw.get("name") or raw.get("label") or f"{api_base} · {model}").strip()
@@ -132,6 +135,7 @@ def normalize_target_config(raw: Dict[str, Any], index: int) -> Dict[str, str]:
         "api_base": api_base,
         "api_key": api_key,
         "model": model,
+        "request_format": request_format,
     }
 
 
@@ -203,6 +207,7 @@ def resolve_target_for_entry(entry: Dict[str, Any], targets: List[Dict[str, str]
         "api_base": api_base or "-",
         "api_key": "",
         "model": model or DEFAULT_MODEL,
+        "request_format": str(entry.get("request_format") or "openai"),
     }
 
 
@@ -215,6 +220,7 @@ def normalize_result(entry: Dict[str, Any], target: Dict[str, str]) -> Dict[str,
         "last_check": timestamp,
         "api_base": entry.get("api_base") or target["api_base"],
         "model": entry.get("model") or target["model"],
+        "request_format": entry.get("request_format") or target.get("request_format", "openai"),
         "http_status": entry.get("http_status"),
         "latency_ms": entry.get("latency_ms"),
         "success": bool(entry.get("success")),
@@ -293,19 +299,72 @@ def build_history_payload(history: List[Dict[str, Any]]) -> Dict[str, Any]:
     }
 
 
-def probe_api(base_url: str, api_key: str, model: str) -> Dict[str, Any]:
-    url = make_url(base_url, "chat/completions")
-    payload = {
-        "model": model,
-        "messages": [{"role": "user", "content": "Hi"}],
-        "max_tokens": 5,
-        "stream": False,
-    }
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {api_key}",
+def build_probe_request(target: Dict[str, str]) -> Dict[str, Any]:
+    request_format = target.get("request_format", "openai")
+    if request_format == "anthropic":
+        return {
+            "url": make_url(target["base_url"], "messages"),
+            "payload": {
+                "model": target["model"],
+                "max_tokens": 16,
+                "messages": [{"role": "user", "content": "Hi"}],
+            },
+            "headers": {
+                "Content-Type": "application/json",
+                "x-api-key": target["api_key"],
+                "anthropic-version": "2023-06-01",
+            },
+        }
+
+    return {
+        "url": make_url(target["base_url"], "chat/completions"),
+        "payload": {
+            "model": target["model"],
+            "messages": [{"role": "user", "content": "Hi"}],
+            "max_tokens": 5,
+            "stream": False,
+        },
+        "headers": {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {target['api_key']}",
+        },
     }
 
+
+def extract_response_text(body: Dict[str, Any], request_format: str) -> Optional[str]:
+    if request_format == "anthropic":
+        content = body.get("content")
+        if not isinstance(content, list):
+            return None
+        text_parts = []
+        for item in content:
+            if isinstance(item, dict) and item.get("type") == "text":
+                text_parts.append(str(item.get("text") or ""))
+        combined = "".join(text_parts).strip()
+        return combined or None
+
+    choices = body.get("choices")
+    if not choices or not isinstance(choices, list):
+        return None
+    first_choice = choices[0]
+    if not isinstance(first_choice, dict):
+        return None
+    message = first_choice.get("message")
+    if not isinstance(message, dict):
+        return None
+    content = message.get("content", "")
+    if isinstance(content, list):
+        text_parts = []
+        for item in content:
+            if isinstance(item, dict) and item.get("type") == "text":
+                text_parts.append(str(item.get("text") or ""))
+        return "".join(text_parts).strip() or None
+    return str(content).strip() or None
+
+
+def probe_api(target: Dict[str, str]) -> Dict[str, Any]:
+    request_format = target.get("request_format", "openai")
+    request_config = build_probe_request(target)
     result = {
         "timestamp": iso_z(utc_now()),
         "success": False,
@@ -313,12 +372,18 @@ def probe_api(base_url: str, api_key: str, model: str) -> Dict[str, Any]:
         "latency_ms": None,
         "token_output": False,
         "error_message": None,
-        "model": model,
+        "model": target["model"],
+        "request_format": request_format,
     }
 
     try:
-        req_data = json.dumps(payload).encode("utf-8")
-        request = urllib.request.Request(url, data=req_data, headers=headers, method="POST")
+        req_data = json.dumps(request_config["payload"]).encode("utf-8")
+        request = urllib.request.Request(
+            request_config["url"],
+            data=req_data,
+            headers=request_config["headers"],
+            method="POST",
+        )
 
         start_time = time.time()
         with urllib.request.urlopen(request, timeout=30) as response:
@@ -341,21 +406,22 @@ def probe_api(base_url: str, api_key: str, model: str) -> Dict[str, Any]:
                 result["error_message"] = f"Unexpected response type: {type(body).__name__}"
                 return result
 
-            choices = body.get("choices")
-            if not choices or not isinstance(choices, list):
+            response_text = extract_response_text(body, request_format)
+            if request_format == "anthropic":
+                if body.get("type") == "error":
+                    err = body.get("error")
+                    result["error_message"] = err.get("message", str(err)) if isinstance(err, dict) else str(err)
+                    return result
+                if body.get("type") != "message":
+                    result["error_message"] = "Unexpected anthropic response"
+                    return result
+            elif not body.get("choices") or not isinstance(body.get("choices"), list):
                 err = body.get("error")
                 result["error_message"] = err.get("message", str(err)) if isinstance(err, dict) else "No choices in response"
                 return result
 
-            first_choice = choices[0]
-            if not isinstance(first_choice, dict):
-                result["error_message"] = "Unexpected choice format"
-                return result
-
-            message = first_choice.get("message")
-            content = message.get("content", "") if isinstance(message, dict) else ""
             result["success"] = True
-            result["token_output"] = bool(content)
+            result["token_output"] = bool(response_text)
 
     except urllib.error.HTTPError as exc:
         result["http_status"] = exc.code
@@ -381,7 +447,7 @@ def run_checks(targets: List[Dict[str, str]]) -> Dict[str, Any]:
 
     statuses: List[Dict[str, Any]] = []
     for target in targets:
-        raw_result = probe_api(target["base_url"], target["api_key"], target["model"])
+        raw_result = probe_api(target)
         statuses.append(normalize_result(raw_result, target))
 
     statuses.sort(key=lambda item: item["target_name"])
