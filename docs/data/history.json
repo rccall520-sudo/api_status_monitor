@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-04-25T05:54:01Z",
+  "updated_at": "2026-04-25T06:50:50Z",
   "entries": [
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
@@ -85,6 +85,32 @@
       "target_name": "thatapi",
       "timestamp": "2026-04-25T05:54:01Z",
       "last_check": "2026-04-25T05:54:01Z",
+      "api_base": "gyapi.zxiaoruan.cn",
+      "model": "glm-5.1",
+      "http_status": 403,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "HTTP 403: Forbidden"
+    },
+    {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-04-25T06:50:47Z",
+      "last_check": "2026-04-25T06:50:47Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "http_status": 404,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "no any schema route found"
+    },
+    {
+      "target_id": "thatapi",
+      "target_name": "thatapi",
+      "timestamp": "2026-04-25T06:50:50Z",
+      "last_check": "2026-04-25T06:50:50Z",
       "api_base": "gyapi.zxiaoruan.cn",
       "model": "glm-5.1",
       "http_status": 403,
