@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-04-25T16:23:30Z",
+  "updated_at": "2026-04-25T16:41:40Z",
   "summary": {
     "target_count": 3,
     "online_count": 0,
@@ -11,8 +11,8 @@
     {
       "target_id": "anyrouter",
       "target_name": "anyrouter",
-      "timestamp": "2026-04-25T16:23:29Z",
-      "last_check": "2026-04-25T16:23:29Z",
+      "timestamp": "2026-04-25T16:41:39Z",
+      "last_check": "2026-04-25T16:41:39Z",
       "api_base": "anyrouter.top",
       "model": "claude-opus-4-7[1m]",
       "http_status": 404,
@@ -24,8 +24,8 @@
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-04-25T16:22:58Z",
-      "last_check": "2026-04-25T16:22:58Z",
+      "timestamp": "2026-04-25T16:41:08Z",
+      "last_check": "2026-04-25T16:41:08Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "http_status": null,
@@ -37,8 +37,8 @@
     {
       "target_id": "thatapi",
       "target_name": "thatapi",
-      "timestamp": "2026-04-25T16:23:29Z",
-      "last_check": "2026-04-25T16:23:29Z",
+      "timestamp": "2026-04-25T16:41:39Z",
+      "last_check": "2026-04-25T16:41:39Z",
       "api_base": "gyapi.zxiaoruan.cn",
       "model": "glm-5.1",
       "http_status": 403,
