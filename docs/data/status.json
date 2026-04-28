@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-04-27T23:32:49Z",
+  "updated_at": "2026-04-28T01:18:47Z",
   "summary": {
     "target_count": 3,
     "online_count": 1,
@@ -11,8 +11,8 @@
     {
       "target_id": "anyrouter",
       "target_name": "anyrouter",
-      "timestamp": "2026-04-27T23:32:48Z",
-      "last_check": "2026-04-27T23:32:48Z",
+      "timestamp": "2026-04-28T01:18:45Z",
+      "last_check": "2026-04-28T01:18:45Z",
       "api_base": "anyrouter.top",
       "model": "claude-opus-4-7[1m]",
       "request_format": "anthropic",
@@ -25,13 +25,13 @@
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-04-27T23:32:45Z",
-      "last_check": "2026-04-27T23:32:45Z",
+      "timestamp": "2026-04-28T01:18:34Z",
+      "last_check": "2026-04-28T01:18:34Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
       "http_status": 200,
-      "latency_ms": 2433,
+      "latency_ms": 10351,
       "success": true,
       "token_output": true,
       "error_message": ""
@@ -39,8 +39,8 @@
     {
       "target_id": "thatapi",
       "target_name": "thatapi",
-      "timestamp": "2026-04-27T23:32:47Z",
-      "last_check": "2026-04-27T23:32:47Z",
+      "timestamp": "2026-04-28T01:18:45Z",
+      "last_check": "2026-04-28T01:18:45Z",
       "api_base": "gyapi.zxiaoruan.cn",
       "model": "glm-5.1",
       "request_format": "openai",
