@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-04-29T01:20:48Z",
+  "updated_at": "2026-04-29T04:49:06Z",
   "entries": [
     {
       "target_id": "anyrouter",
@@ -2593,6 +2593,20 @@
       "error_message": ""
     },
     {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-04-29T01:20:43Z",
+      "last_check": "2026-04-29T01:20:43Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": 404,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "no any schema route found"
+    },
+    {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
       "timestamp": "2026-04-29T01:20:44Z",
@@ -2607,18 +2621,32 @@
       "error_message": ""
     },
     {
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-04-29T04:48:48Z",
+      "last_check": "2026-04-29T04:48:48Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "Deepseek-V4-Pro",
+      "request_format": "openai",
+      "http_status": 200,
+      "latency_ms": 18108,
+      "success": true,
+      "token_output": true,
+      "error_message": ""
+    },
+    {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-04-29T01:20:43Z",
-      "last_check": "2026-04-29T01:20:43Z",
+      "timestamp": "2026-04-29T04:48:38Z",
+      "last_check": "2026-04-29T04:48:38Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
-      "http_status": 404,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "no any schema route found"
+      "http_status": 200,
+      "latency_ms": 9634,
+      "success": true,
+      "token_output": true,
+      "error_message": ""
     }
   ]
 }
