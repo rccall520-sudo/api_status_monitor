@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-04-29T04:49:06Z",
+  "updated_at": "2026-04-29T07:13:18Z",
   "summary": {
     "target_count": 2,
     "online_count": 2,
@@ -11,13 +11,13 @@
     {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
-      "timestamp": "2026-04-29T04:48:48Z",
-      "last_check": "2026-04-29T04:48:48Z",
+      "timestamp": "2026-04-29T07:13:05Z",
+      "last_check": "2026-04-29T07:13:05Z",
       "api_base": "jiuuij.de5.net",
       "model": "Deepseek-V4-Pro",
       "request_format": "openai",
       "http_status": 200,
-      "latency_ms": 18108,
+      "latency_ms": 12545,
       "success": true,
       "token_output": true,
       "error_message": ""
@@ -25,13 +25,13 @@
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-04-29T04:48:38Z",
-      "last_check": "2026-04-29T04:48:38Z",
+      "timestamp": "2026-04-29T07:13:03Z",
+      "last_check": "2026-04-29T07:13:03Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
       "http_status": 200,
-      "latency_ms": 9634,
+      "latency_ms": 1806,
       "success": true,
       "token_output": true,
       "error_message": ""
