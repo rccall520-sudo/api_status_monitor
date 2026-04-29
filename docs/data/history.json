@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-04-29T11:14:25Z",
+  "updated_at": "2026-04-29T12:56:20Z",
   "entries": [
     {
       "target_id": "anyrouter",
@@ -2705,6 +2705,20 @@
       "error_message": ""
     },
     {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-04-29T11:14:18Z",
+      "last_check": "2026-04-29T11:14:18Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": 200,
+      "latency_ms": 3145,
+      "success": true,
+      "token_output": true,
+      "error_message": ""
+    },
+    {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
       "timestamp": "2026-04-29T11:14:21Z",
@@ -2719,15 +2733,29 @@
       "error_message": ""
     },
     {
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-04-29T12:56:15Z",
+      "last_check": "2026-04-29T12:56:15Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "Deepseek-V4-Pro",
+      "request_format": "openai",
+      "http_status": 200,
+      "latency_ms": 4155,
+      "success": true,
+      "token_output": true,
+      "error_message": ""
+    },
+    {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-04-29T11:14:18Z",
-      "last_check": "2026-04-29T11:14:18Z",
+      "timestamp": "2026-04-29T12:56:13Z",
+      "last_check": "2026-04-29T12:56:13Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
       "http_status": 200,
-      "latency_ms": 3145,
+      "latency_ms": 2475,
       "success": true,
       "token_output": true,
       "error_message": ""
