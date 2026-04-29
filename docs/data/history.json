@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-04-29T00:46:12Z",
+  "updated_at": "2026-04-29T01:20:48Z",
   "entries": [
     {
       "target_id": "anyrouter",
@@ -2565,6 +2565,20 @@
       "error_message": "HTTP 403: Forbidden"
     },
     {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-04-29T00:45:58Z",
+      "last_check": "2026-04-29T00:45:58Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": 200,
+      "latency_ms": 2159,
+      "success": true,
+      "token_output": true,
+      "error_message": ""
+    },
+    {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
       "timestamp": "2026-04-29T00:46:00Z",
@@ -2579,18 +2593,32 @@
       "error_message": ""
     },
     {
-      "target_id": "jiuuij-de5-net-glm-5-1",
-      "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-04-29T00:45:58Z",
-      "last_check": "2026-04-29T00:45:58Z",
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-04-29T01:20:44Z",
+      "last_check": "2026-04-29T01:20:44Z",
       "api_base": "jiuuij.de5.net",
-      "model": "GLM-5.1",
+      "model": "Deepseek-V4-Pro",
       "request_format": "openai",
       "http_status": 200,
-      "latency_ms": 2159,
+      "latency_ms": 3905,
       "success": true,
       "token_output": true,
       "error_message": ""
+    },
+    {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-04-29T01:20:43Z",
+      "last_check": "2026-04-29T01:20:43Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": 404,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "no any schema route found"
     }
   ]
 }
