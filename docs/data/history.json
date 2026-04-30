@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-04-30T20:13:03Z",
+  "updated_at": "2026-04-30T21:16:32Z",
   "entries": [
     {
       "target_id": "anyrouter",
@@ -3263,6 +3263,34 @@
       "success": false,
       "token_output": false,
       "error_message": "分组 国产 下模型 GLM-5.1 无可用渠道（distributor） (request id: 20260501041258856887865NKwhEWeb)"
+    },
+    {
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-04-30T21:16:29Z",
+      "last_check": "2026-04-30T21:16:29Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "Deepseek-V4-Pro",
+      "request_format": "openai",
+      "http_status": 200,
+      "latency_ms": 3286,
+      "success": true,
+      "token_output": true,
+      "error_message": ""
+    },
+    {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-04-30T21:16:28Z",
+      "last_check": "2026-04-30T21:16:28Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": 503,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "分组 国产 下模型 GLM-5.1 无可用渠道（distributor） (request id: 20260501051629547894836H53Ho1fx)"
     }
   ]
 }
