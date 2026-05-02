@@ -1,32 +1,32 @@
 {
   "version": 2,
-  "updated_at": "2026-05-02T14:43:38Z",
+  "updated_at": "2026-05-02T15:33:54Z",
   "summary": {
     "target_count": 2,
-    "online_count": 0,
-    "offline_count": 2,
+    "online_count": 1,
+    "offline_count": 1,
     "overall_success": false
   },
   "targets": [
     {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
-      "timestamp": "2026-05-02T14:43:07Z",
-      "last_check": "2026-05-02T14:43:07Z",
+      "timestamp": "2026-05-02T15:33:49Z",
+      "last_check": "2026-05-02T15:33:49Z",
       "api_base": "jiuuij.de5.net",
       "model": "Deepseek-V4-Pro",
       "request_format": "openai",
-      "http_status": null,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "Error: The read operation timed out"
+      "http_status": 200,
+      "latency_ms": 4104,
+      "success": true,
+      "token_output": true,
+      "error_message": ""
     },
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-05-02T14:43:06Z",
-      "last_check": "2026-05-02T14:43:06Z",
+      "timestamp": "2026-05-02T15:33:49Z",
+      "last_check": "2026-05-02T15:33:49Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
@@ -34,7 +34,7 @@
       "latency_ms": null,
       "success": false,
       "token_output": false,
-      "error_message": "分组 国产 下模型 GLM-5.1 无可用渠道（distributor） (request id: 20260502224307308510408epSHDUIc)"
+      "error_message": "分组 国产 下模型 GLM-5.1 无可用渠道（distributor） (request id: 20260502233349958057370vR27cbuF)"
     }
   ]
 }
