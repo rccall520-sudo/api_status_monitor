@@ -1,49 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-05-03T19:58:11Z",
+  "updated_at": "2026-05-03T20:45:23Z",
   "entries": [
-    {
-      "target_id": "jiuuij-de5-net-glm-5-1",
-      "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-04-26T20:41:27Z",
-      "last_check": "2026-04-26T20:41:27Z",
-      "api_base": "jiuuij.de5.net",
-      "model": "GLM-5.1",
-      "request_format": "openai",
-      "http_status": 200,
-      "latency_ms": 2448,
-      "success": true,
-      "token_output": true,
-      "error_message": ""
-    },
-    {
-      "target_id": "anyrouter",
-      "target_name": "anyrouter",
-      "timestamp": "2026-04-26T20:41:30Z",
-      "last_check": "2026-04-26T20:41:30Z",
-      "api_base": "anyrouter.top",
-      "model": "claude-opus-4-7[1m]",
-      "request_format": "anthropic",
-      "http_status": 400,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "1m 上下文已经全量可用，请启用 1m 上下文后重试"
-    },
-    {
-      "target_id": "thatapi",
-      "target_name": "thatapi",
-      "timestamp": "2026-04-26T20:41:30Z",
-      "last_check": "2026-04-26T20:41:30Z",
-      "api_base": "gyapi.zxiaoruan.cn",
-      "model": "glm-5.1",
-      "request_format": "openai",
-      "http_status": 403,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "HTTP 403: Forbidden"
-    },
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
@@ -3615,6 +3573,20 @@
       "error_message": "Error: The read operation timed out"
     },
     {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-05-03T19:57:40Z",
+      "last_check": "2026-05-03T19:57:40Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": 503,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "分组 国产 下模型 GLM-5.1 无可用渠道（distributor） (request id: 2026050403574123140364FBrx0haF)"
+    },
+    {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
       "timestamp": "2026-05-03T19:57:41Z",
@@ -3629,10 +3601,24 @@
       "error_message": "Error: The read operation timed out"
     },
     {
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-05-03T20:45:09Z",
+      "last_check": "2026-05-03T20:45:09Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "Deepseek-V4-Pro",
+      "request_format": "openai",
+      "http_status": 200,
+      "latency_ms": 14599,
+      "success": true,
+      "token_output": true,
+      "error_message": ""
+    },
+    {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-05-03T19:57:40Z",
-      "last_check": "2026-05-03T19:57:40Z",
+      "timestamp": "2026-05-03T20:45:08Z",
+      "last_check": "2026-05-03T20:45:08Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
@@ -3640,7 +3626,7 @@
       "latency_ms": null,
       "success": false,
       "token_output": false,
-      "error_message": "分组 国产 下模型 GLM-5.1 无可用渠道（distributor） (request id: 2026050403574123140364FBrx0haF)"
+      "error_message": "分组 国产 下模型 GLM-5.1 无可用渠道（distributor） (request id: 202605040445091111004391NqXmLid)"
     }
   ]
 }
