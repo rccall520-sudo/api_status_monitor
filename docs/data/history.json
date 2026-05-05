@@ -1,91 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-05-05T12:58:29Z",
+  "updated_at": "2026-05-05T16:56:37Z",
   "entries": [
-    {
-      "target_id": "jiuuij-de5-net-glm-5-1",
-      "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-04-28T13:09:38Z",
-      "last_check": "2026-04-28T13:09:38Z",
-      "api_base": "jiuuij.de5.net",
-      "model": "GLM-5.1",
-      "request_format": "openai",
-      "http_status": 404,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "no any schema route found"
-    },
-    {
-      "target_id": "anyrouter",
-      "target_name": "anyrouter",
-      "timestamp": "2026-04-28T13:09:40Z",
-      "last_check": "2026-04-28T13:09:40Z",
-      "api_base": "anyrouter.top",
-      "model": "claude-opus-4-7[1m]",
-      "request_format": "anthropic",
-      "http_status": 400,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "1m 上下文已经全量可用，请启用 1m 上下文后重试"
-    },
-    {
-      "target_id": "thatapi",
-      "target_name": "thatapi",
-      "timestamp": "2026-04-28T13:09:40Z",
-      "last_check": "2026-04-28T13:09:40Z",
-      "api_base": "gyapi.zxiaoruan.cn",
-      "model": "glm-5.1",
-      "request_format": "openai",
-      "http_status": 403,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "HTTP 403: Forbidden"
-    },
-    {
-      "target_id": "jiuuij-de5-net-glm-5-1",
-      "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-04-28T15:36:11Z",
-      "last_check": "2026-04-28T15:36:11Z",
-      "api_base": "jiuuij.de5.net",
-      "model": "GLM-5.1",
-      "request_format": "openai",
-      "http_status": 200,
-      "latency_ms": 11974,
-      "success": true,
-      "token_output": true,
-      "error_message": ""
-    },
-    {
-      "target_id": "anyrouter",
-      "target_name": "anyrouter",
-      "timestamp": "2026-04-28T15:36:23Z",
-      "last_check": "2026-04-28T15:36:23Z",
-      "api_base": "anyrouter.top",
-      "model": "claude-opus-4-7[1m]",
-      "request_format": "anthropic",
-      "http_status": 400,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "1m 上下文已经全量可用，请启用 1m 上下文后重试"
-    },
-    {
-      "target_id": "thatapi",
-      "target_name": "thatapi",
-      "timestamp": "2026-04-28T15:36:23Z",
-      "last_check": "2026-04-28T15:36:23Z",
-      "api_base": "gyapi.zxiaoruan.cn",
-      "model": "glm-5.1",
-      "request_format": "openai",
-      "http_status": 403,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "HTTP 403: Forbidden"
-    },
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
@@ -3305,6 +3221,34 @@
       "success": false,
       "token_output": false,
       "error_message": "分组 国产 下模型 GLM-5.1 无可用渠道（distributor） (request id: 202605052058108609638900HYyI7PR)"
+    },
+    {
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-05-05T16:56:33Z",
+      "last_check": "2026-05-05T16:56:33Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "Deepseek-V4-Pro",
+      "request_format": "openai",
+      "http_status": 200,
+      "latency_ms": 4280,
+      "success": true,
+      "token_output": true,
+      "error_message": ""
+    },
+    {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-05-05T16:56:32Z",
+      "last_check": "2026-05-05T16:56:32Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": 503,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "分组 国产 下模型 GLM-5.1 无可用渠道（distributor） (request id: 202605060056334417567556ZGgxogN)"
     }
   ]
 }
