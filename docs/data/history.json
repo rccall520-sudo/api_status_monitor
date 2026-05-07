@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-05-06T23:08:18Z",
+  "updated_at": "2026-05-07T00:01:49Z",
   "entries": [
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
@@ -3083,6 +3083,20 @@
       "error_message": ""
     },
     {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-05-06T23:08:13Z",
+      "last_check": "2026-05-06T23:08:13Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": 503,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "分组 国产 下模型 GLM-5.1 无可用渠道（distributor） (request id: 20260507070814828606576H7iQgKfW)"
+    },
+    {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
       "timestamp": "2026-05-06T23:08:14Z",
@@ -3097,10 +3111,24 @@
       "error_message": ""
     },
     {
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-05-07T00:01:43Z",
+      "last_check": "2026-05-07T00:01:43Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "Deepseek-V4-Pro",
+      "request_format": "openai",
+      "http_status": 200,
+      "latency_ms": 6066,
+      "success": true,
+      "token_output": true,
+      "error_message": ""
+    },
+    {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-05-06T23:08:13Z",
-      "last_check": "2026-05-06T23:08:13Z",
+      "timestamp": "2026-05-07T00:01:42Z",
+      "last_check": "2026-05-07T00:01:42Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
@@ -3108,7 +3136,7 @@
       "latency_ms": null,
       "success": false,
       "token_output": false,
-      "error_message": "分组 国产 下模型 GLM-5.1 无可用渠道（distributor） (request id: 20260507070814828606576H7iQgKfW)"
+      "error_message": "分组 国产 下模型 GLM-5.1 无可用渠道（distributor） (request id: 20260507080143296783109MIDjgeIT)"
     }
   ]
 }
