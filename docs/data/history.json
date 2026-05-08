@@ -1,35 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-05-08T22:52:13Z",
+  "updated_at": "2026-05-08T23:52:27Z",
   "entries": [
-    {
-      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
-      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
-      "timestamp": "2026-05-01T23:02:22Z",
-      "last_check": "2026-05-01T23:02:22Z",
-      "api_base": "jiuuij.de5.net",
-      "model": "Deepseek-V4-Pro",
-      "request_format": "openai",
-      "http_status": 200,
-      "latency_ms": 4587,
-      "success": true,
-      "token_output": true,
-      "error_message": ""
-    },
-    {
-      "target_id": "jiuuij-de5-net-glm-5-1",
-      "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-05-01T23:02:22Z",
-      "last_check": "2026-05-01T23:02:22Z",
-      "api_base": "jiuuij.de5.net",
-      "model": "GLM-5.1",
-      "request_format": "openai",
-      "http_status": 503,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "分组 国产 下模型 GLM-5.1 无可用渠道（distributor） (request id: 202605020702229829549688vmK8K9T)"
-    },
     {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
@@ -3027,6 +2999,20 @@
       "error_message": "Connection error: [Errno 111] Connection refused"
     },
     {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-05-08T22:52:12Z",
+      "last_check": "2026-05-08T22:52:12Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": null,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "Connection error: [Errno 111] Connection refused"
+    },
+    {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
       "timestamp": "2026-05-08T22:52:13Z",
@@ -3041,10 +3027,24 @@
       "error_message": "Connection error: [Errno 111] Connection refused"
     },
     {
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-05-08T23:52:26Z",
+      "last_check": "2026-05-08T23:52:26Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "Deepseek-V4-Pro",
+      "request_format": "openai",
+      "http_status": null,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "Connection error: [Errno 111] Connection refused"
+    },
+    {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-05-08T22:52:12Z",
-      "last_check": "2026-05-08T22:52:12Z",
+      "timestamp": "2026-05-08T23:52:26Z",
+      "last_check": "2026-05-08T23:52:26Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
