@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-05-16T03:56:56Z",
+  "updated_at": "2026-05-16T06:21:16Z",
   "summary": {
     "target_count": 2,
     "online_count": 1,
@@ -11,8 +11,8 @@
     {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
-      "timestamp": "2026-05-16T03:56:56Z",
-      "last_check": "2026-05-16T03:56:56Z",
+      "timestamp": "2026-05-16T06:21:16Z",
+      "last_check": "2026-05-16T06:21:16Z",
       "api_base": "jiuuij.de5.net",
       "model": "Deepseek-V4-Pro",
       "request_format": "openai",
@@ -20,18 +20,18 @@
       "latency_ms": null,
       "success": false,
       "token_output": false,
-      "error_message": "分组 国产 下模型 Deepseek-V4-Pro 无可用渠道（distributor） (request id: 202605160356569706639532ViXbhEI)"
+      "error_message": "分组 国产 下模型 Deepseek-V4-Pro 无可用渠道（distributor） (request id: 20260516062116308725682EiVupN15)"
     },
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-05-16T03:56:30Z",
-      "last_check": "2026-05-16T03:56:30Z",
+      "timestamp": "2026-05-16T06:20:48Z",
+      "last_check": "2026-05-16T06:20:48Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
       "http_status": 200,
-      "latency_ms": 26005,
+      "latency_ms": 27986,
       "success": true,
       "token_output": true,
       "error_message": ""
