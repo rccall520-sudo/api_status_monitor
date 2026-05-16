@@ -1,35 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-05-16T08:22:09Z",
+  "updated_at": "2026-05-16T09:54:22Z",
   "entries": [
-    {
-      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
-      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
-      "timestamp": "2026-05-09T08:57:29Z",
-      "last_check": "2026-05-09T08:57:29Z",
-      "api_base": "jiuuij.de5.net",
-      "model": "Deepseek-V4-Pro",
-      "request_format": "openai",
-      "http_status": null,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "Connection error: [Errno 111] Connection refused"
-    },
-    {
-      "target_id": "jiuuij-de5-net-glm-5-1",
-      "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-05-09T08:57:29Z",
-      "last_check": "2026-05-09T08:57:29Z",
-      "api_base": "jiuuij.de5.net",
-      "model": "GLM-5.1",
-      "request_format": "openai",
-      "http_status": null,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "Connection error: [Errno 111] Connection refused"
-    },
     {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
@@ -2607,6 +2579,20 @@
       "error_message": "分组 国产 下模型 Deepseek-V4-Pro 无可用渠道（distributor） (request id: 20260516062116308725682EiVupN15)"
     },
     {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-05-16T08:21:53Z",
+      "last_check": "2026-05-16T08:21:53Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": 200,
+      "latency_ms": 15135,
+      "success": true,
+      "token_output": true,
+      "error_message": ""
+    },
+    {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
       "timestamp": "2026-05-16T08:22:09Z",
@@ -2621,15 +2607,29 @@
       "error_message": "分组 国产 下模型 Deepseek-V4-Pro 无可用渠道（distributor） (request id: 20260516082209431857719MANSUZwW)"
     },
     {
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-05-16T09:54:22Z",
+      "last_check": "2026-05-16T09:54:22Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "Deepseek-V4-Pro",
+      "request_format": "openai",
+      "http_status": 503,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "分组 国产 下模型 Deepseek-V4-Pro 无可用渠道（distributor） (request id: 20260516095422875823560g8MdMmM1)"
+    },
+    {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-05-16T08:21:53Z",
-      "last_check": "2026-05-16T08:21:53Z",
+      "timestamp": "2026-05-16T09:54:19Z",
+      "last_check": "2026-05-16T09:54:19Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
       "http_status": 200,
-      "latency_ms": 15135,
+      "latency_ms": 2560,
       "success": true,
       "token_output": true,
       "error_message": ""
