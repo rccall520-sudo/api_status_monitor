@@ -1,35 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-05-22T21:20:52Z",
+  "updated_at": "2026-05-22T22:33:06Z",
   "entries": [
-    {
-      "target_id": "jiuuij-de5-net-glm-5-1",
-      "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-05-15T22:02:56Z",
-      "last_check": "2026-05-15T22:02:56Z",
-      "api_base": "jiuuij.de5.net",
-      "model": "GLM-5.1",
-      "request_format": "openai",
-      "http_status": 200,
-      "latency_ms": 15853,
-      "success": true,
-      "token_output": true,
-      "error_message": ""
-    },
-    {
-      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
-      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
-      "timestamp": "2026-05-15T22:03:12Z",
-      "last_check": "2026-05-15T22:03:12Z",
-      "api_base": "jiuuij.de5.net",
-      "model": "Deepseek-V4-Pro",
-      "request_format": "openai",
-      "http_status": 503,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "分组 国产 下模型 Deepseek-V4-Pro 无可用渠道（distributor） (request id: 2026051522031280892955Plny8bUy)"
-    },
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
@@ -2353,6 +2325,34 @@
       "success": false,
       "token_output": false,
       "error_message": "该令牌状态不可用 (request id: 20260522212051635064337aukqkz7g)"
+    },
+    {
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-05-22T22:33:05Z",
+      "last_check": "2026-05-22T22:33:05Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "Deepseek-V4-Pro",
+      "request_format": "openai",
+      "http_status": 401,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "该令牌状态不可用 (request id: 2026052222330657909155nxV14z6o)"
+    },
+    {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-05-22T22:33:05Z",
+      "last_check": "2026-05-22T22:33:05Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": 401,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "该令牌状态不可用 (request id: 20260522223305807727820EsAlXEpS)"
     }
   ]
 }
