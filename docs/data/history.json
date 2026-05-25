@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-05-25T16:22:16Z",
+  "updated_at": "2026-05-25T18:07:31Z",
   "entries": [
     {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
@@ -2271,6 +2271,20 @@
       "error_message": "该令牌状态不可用 (request id: 20260525135647418271997efFDTzDD)"
     },
     {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-05-25T16:22:15Z",
+      "last_check": "2026-05-25T16:22:15Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": 401,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "该令牌状态不可用 (request id: 20260525162216221748580Tts7mnDd)"
+    },
+    {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
       "timestamp": "2026-05-25T16:22:16Z",
@@ -2285,10 +2299,24 @@
       "error_message": "该令牌状态不可用 (request id: 20260525162216801086679JSyeQoyj)"
     },
     {
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-05-25T18:07:30Z",
+      "last_check": "2026-05-25T18:07:30Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "Deepseek-V4-Pro",
+      "request_format": "openai",
+      "http_status": 401,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "该令牌状态不可用 (request id: 20260525180731104608904HXwTPV3u)"
+    },
+    {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-05-25T16:22:15Z",
-      "last_check": "2026-05-25T16:22:15Z",
+      "timestamp": "2026-05-25T18:07:30Z",
+      "last_check": "2026-05-25T18:07:30Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
@@ -2296,7 +2324,7 @@
       "latency_ms": null,
       "success": false,
       "token_output": false,
-      "error_message": "该令牌状态不可用 (request id: 20260525162216221748580Tts7mnDd)"
+      "error_message": "该令牌状态不可用 (request id: 202605251807307775626477q8noYrM)"
     }
   ]
 }
