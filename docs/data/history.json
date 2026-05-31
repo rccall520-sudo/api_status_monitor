@@ -1,35 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-05-31T20:03:58Z",
+  "updated_at": "2026-05-31T21:12:15Z",
   "entries": [
-    {
-      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
-      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
-      "timestamp": "2026-05-24T20:48:18Z",
-      "last_check": "2026-05-24T20:48:18Z",
-      "api_base": "jiuuij.de5.net",
-      "model": "Deepseek-V4-Pro",
-      "request_format": "openai",
-      "http_status": 401,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "该令牌状态不可用 (request id: 20260524204819404504010bS43Js7l)"
-    },
-    {
-      "target_id": "jiuuij-de5-net-glm-5-1",
-      "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-05-24T20:48:18Z",
-      "last_check": "2026-05-24T20:48:18Z",
-      "api_base": "jiuuij.de5.net",
-      "model": "GLM-5.1",
-      "request_format": "openai",
-      "http_status": 401,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "该令牌状态不可用 (request id: 20260524204818794359412wp3epsV7)"
-    },
     {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
@@ -2047,6 +2019,20 @@
       "error_message": "该令牌状态不可用 (request id: 20260531185521581699411NRcnDHGC)"
     },
     {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-05-31T20:03:57Z",
+      "last_check": "2026-05-31T20:03:57Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": 401,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "该令牌状态不可用 (request id: 20260531200358184462507Z0Qlf9ec)"
+    },
+    {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
       "timestamp": "2026-05-31T20:03:58Z",
@@ -2061,10 +2047,24 @@
       "error_message": "该令牌状态不可用 (request id: 20260531200358498743886q0hOnNdh)"
     },
     {
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-05-31T21:12:15Z",
+      "last_check": "2026-05-31T21:12:15Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "Deepseek-V4-Pro",
+      "request_format": "openai",
+      "http_status": 401,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "该令牌状态不可用 (request id: 20260531211215758104286MZPiQk6t)"
+    },
+    {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-05-31T20:03:57Z",
-      "last_check": "2026-05-31T20:03:57Z",
+      "timestamp": "2026-05-31T21:12:15Z",
+      "last_check": "2026-05-31T21:12:15Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
@@ -2072,7 +2072,7 @@
       "latency_ms": null,
       "success": false,
       "token_output": false,
-      "error_message": "该令牌状态不可用 (request id: 20260531200358184462507Z0Qlf9ec)"
+      "error_message": "该令牌状态不可用 (request id: 20260531211215626825076LOkMh7ns)"
     }
   ]
 }
