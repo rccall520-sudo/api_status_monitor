@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-08-01T11:58:42Z",
+  "updated_at": "2026-08-01T13:35:00Z",
   "summary": {
     "target_count": 2,
     "online_count": 0,
@@ -11,8 +11,8 @@
     {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
-      "timestamp": "2026-08-01T11:58:42Z",
-      "last_check": "2026-08-01T11:58:42Z",
+      "timestamp": "2026-08-01T13:35:00Z",
+      "last_check": "2026-08-01T13:35:00Z",
       "api_base": "jiuuij.de5.net",
       "model": "Deepseek-V4-Pro",
       "request_format": "openai",
@@ -20,13 +20,13 @@
       "latency_ms": null,
       "success": false,
       "token_output": false,
-      "error_message": "无效的令牌 (request id: 20260801115842781847934xT1Sy0iN)"
+      "error_message": "无效的令牌 (request id: 202608011335008066640232D6xbZB7)"
     },
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-08-01T11:58:42Z",
-      "last_check": "2026-08-01T11:58:42Z",
+      "timestamp": "2026-08-01T13:35:00Z",
+      "last_check": "2026-08-01T13:35:00Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
@@ -34,7 +34,7 @@
       "latency_ms": null,
       "success": false,
       "token_output": false,
-      "error_message": "无效的令牌 (request id: 20260801115842642656533P6F1uIoj)"
+      "error_message": "无效的令牌 (request id: 202608011335004809761400IaDDWkA)"
     }
   ]
 }
