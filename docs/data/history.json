@@ -1,35 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-08-10T21:53:26Z",
+  "updated_at": "2026-08-10T22:30:48Z",
   "entries": [
-    {
-      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
-      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
-      "timestamp": "2026-08-03T22:08:41Z",
-      "last_check": "2026-08-03T22:08:41Z",
-      "api_base": "jiuuij.de5.net",
-      "model": "Deepseek-V4-Pro",
-      "request_format": "openai",
-      "http_status": 401,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "无效的令牌 (request id: 2026080322084220641690n31VvKm4)"
-    },
-    {
-      "target_id": "jiuuij-de5-net-glm-5-1",
-      "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-08-03T22:08:41Z",
-      "last_check": "2026-08-03T22:08:41Z",
-      "api_base": "jiuuij.de5.net",
-      "model": "GLM-5.1",
-      "request_format": "openai",
-      "http_status": 401,
-      "latency_ms": null,
-      "success": false,
-      "token_output": false,
-      "error_message": "无效的令牌 (request id: 20260803220841715390094r9cBgYjg)"
-    },
     {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
@@ -4007,6 +3979,20 @@
       "error_message": "无效的令牌 (request id: 20260810210511717657924pvuuxnD5)"
     },
     {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-08-10T21:53:25Z",
+      "last_check": "2026-08-10T21:53:25Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": 401,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "无效的令牌 (request id: 20260810215326399931830E1rWCLA)"
+    },
+    {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
       "timestamp": "2026-08-10T21:53:26Z",
@@ -4021,10 +4007,24 @@
       "error_message": "无效的令牌 (request id: 20260810215326165152863owR0FH0o)"
     },
     {
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-08-10T22:30:48Z",
+      "last_check": "2026-08-10T22:30:48Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "Deepseek-V4-Pro",
+      "request_format": "openai",
+      "http_status": 401,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "无效的令牌 (request id: 202608102230483676685283cQbhUuH)"
+    },
+    {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-08-10T21:53:25Z",
-      "last_check": "2026-08-10T21:53:25Z",
+      "timestamp": "2026-08-10T22:30:48Z",
+      "last_check": "2026-08-10T22:30:48Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
@@ -4032,7 +4032,7 @@
       "latency_ms": null,
       "success": false,
       "token_output": false,
-      "error_message": "无效的令牌 (request id: 20260810215326399931830E1rWCLA)"
+      "error_message": "无效的令牌 (request id: 20260810223048307995780OJGOJVK8)"
     }
   ]
 }
