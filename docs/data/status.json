@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-08-15T09:10:18Z",
+  "updated_at": "2026-08-15T09:42:49Z",
   "summary": {
     "target_count": 2,
     "online_count": 0,
@@ -11,30 +11,30 @@
     {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
-      "timestamp": "2026-08-15T09:10:18Z",
-      "last_check": "2026-08-15T09:10:18Z",
+      "timestamp": "2026-08-15T09:42:49Z",
+      "last_check": "2026-08-15T09:42:49Z",
       "api_base": "jiuuij.de5.net",
       "model": "Deepseek-V4-Pro",
       "request_format": "openai",
-      "http_status": 401,
+      "http_status": null,
       "latency_ms": null,
       "success": false,
       "token_output": false,
-      "error_message": "无效的令牌 (request id: 20260815091018184671887k3fX09Ne)"
+      "error_message": "Connection error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'jiuuij.de5.net'. (_ssl.c:1016)"
     },
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-08-15T09:10:18Z",
-      "last_check": "2026-08-15T09:10:18Z",
+      "timestamp": "2026-08-15T09:42:49Z",
+      "last_check": "2026-08-15T09:42:49Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
-      "http_status": 401,
+      "http_status": null,
       "latency_ms": null,
       "success": false,
       "token_output": false,
-      "error_message": "无效的令牌 (request id: 2026081509101893597751kWWyA58L)"
+      "error_message": "Connection error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'jiuuij.de5.net'. (_ssl.c:1016)"
     }
   ]
 }
