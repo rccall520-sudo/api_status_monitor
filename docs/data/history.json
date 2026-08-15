@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-08-15T08:46:59Z",
+  "updated_at": "2026-08-15T09:10:18Z",
   "entries": [
     {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
@@ -5183,6 +5183,20 @@
       "error_message": "无效的令牌 (request id: 20260815081018744911995VDOqWBVj)"
     },
     {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-08-15T08:46:58Z",
+      "last_check": "2026-08-15T08:46:58Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": 401,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "无效的令牌 (request id: 20260815084658997042506idYvAmoN)"
+    },
+    {
       "target_id": "jiuuij-de5-net-deepseek-v4-pro",
       "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
       "timestamp": "2026-08-15T08:46:59Z",
@@ -5197,10 +5211,24 @@
       "error_message": "无效的令牌 (request id: 20260815084659236663726saLfUTcK)"
     },
     {
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-08-15T09:10:18Z",
+      "last_check": "2026-08-15T09:10:18Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "Deepseek-V4-Pro",
+      "request_format": "openai",
+      "http_status": 401,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "无效的令牌 (request id: 20260815091018184671887k3fX09Ne)"
+    },
+    {
       "target_id": "jiuuij-de5-net-glm-5-1",
       "target_name": "jiuuij.de5.net · GLM-5.1",
-      "timestamp": "2026-08-15T08:46:58Z",
-      "last_check": "2026-08-15T08:46:58Z",
+      "timestamp": "2026-08-15T09:10:18Z",
+      "last_check": "2026-08-15T09:10:18Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
@@ -5208,7 +5236,7 @@
       "latency_ms": null,
       "success": false,
       "token_output": false,
-      "error_message": "无效的令牌 (request id: 20260815084658997042506idYvAmoN)"
+      "error_message": "无效的令牌 (request id: 2026081509101893597751kWWyA58L)"
     }
   ]
 }
