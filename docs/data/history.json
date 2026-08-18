@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-08-18T19:49:12Z",
+  "updated_at": "2026-08-18T20:01:21Z",
   "entries": [
     {
       "target_id": "jiuuij-de5-net-glm-5-1",
@@ -6937,6 +6937,34 @@
       "target_name": "jiuuij.de5.net · GLM-5.1",
       "timestamp": "2026-08-18T19:49:12Z",
       "last_check": "2026-08-18T19:49:12Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "GLM-5.1",
+      "request_format": "openai",
+      "http_status": null,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "Connection error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'jiuuij.de5.net'. (_ssl.c:1016)"
+    },
+    {
+      "target_id": "jiuuij-de5-net-deepseek-v4-pro",
+      "target_name": "jiuuij.de5.net · Deepseek-V4-Pro",
+      "timestamp": "2026-08-18T20:01:21Z",
+      "last_check": "2026-08-18T20:01:21Z",
+      "api_base": "jiuuij.de5.net",
+      "model": "Deepseek-V4-Pro",
+      "request_format": "openai",
+      "http_status": null,
+      "latency_ms": null,
+      "success": false,
+      "token_output": false,
+      "error_message": "Connection error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'jiuuij.de5.net'. (_ssl.c:1016)"
+    },
+    {
+      "target_id": "jiuuij-de5-net-glm-5-1",
+      "target_name": "jiuuij.de5.net · GLM-5.1",
+      "timestamp": "2026-08-18T20:01:21Z",
+      "last_check": "2026-08-18T20:01:21Z",
       "api_base": "jiuuij.de5.net",
       "model": "GLM-5.1",
       "request_format": "openai",
